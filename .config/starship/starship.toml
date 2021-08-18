@@ -1,0 +1,23 @@
+# Inserts a blank line between shell prompts
+add_newline = true 
+
+[character]                            
+success_symbol = "[λ](bold #98971a)"     
+error_symbol = "[λ](bold #cc241d)"
+
+[package]
+disabled = true
+
+[directory]
+home_symbol = "~"
+truncation_length = 10
+truncate_to_repo = true 
+truncation_symbol = "…/"
+style = " italic #689d6a"
+format = "[ﱮ $path]($style)[$lock_symbol]($lock_style) "
+
+[git_branch]
+symbol = " "
+truncation_length = 4
+truncation_symbol = ""
+
