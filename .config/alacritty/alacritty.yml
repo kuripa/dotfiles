@@ -22,17 +22,19 @@ window:
 
 font:
   normal:
-    family: Source Code Pro
+    family: Hack Nerd Font
     style: Regular
 
   bold:
-    family: Source Code Pro
+    family: Hack Nerd Font
     style: Bold
-    family: Source Code Pro
+  
+  
+    family: Hack Nerd Font
     style: Italic
 
   bold_italic:
-    family: Source Code Pro
+    family: Hack Nerd Font
     style: Bold Italic
 
   size: 12.0
