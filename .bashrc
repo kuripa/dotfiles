@@ -7,12 +7,17 @@ alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 . "$HOME/.cargo/env"
 
+# starship
 eval "$(starship init bash)"
 
 function mkcdir
 {
   command mkdir $1 && cd $1
 }
-alias dotfile='/usr/bin/git --git-dir=/home/nick/.dotfiles/ --work-tree=/home/nick'
 
+alias dotfile='/usr/bin/git --git-dir=/home/nick/.dotfiles/ --work-tree=/home/nick'
 alias luamake=/home/nick/repo/lua-language-server/3rd/luamake/luamake
+
+# fzf
+source /usr/share/doc/fzf/completion.bash
+source /usr/share/doc/fzf/key-bindings.bash
