@@ -24,10 +24,15 @@ vol() {
     echo -e "$vol"
 }
 
+upd() {
+    upd=$(checkupdates | wc -l)
+    echo -e "$upd"
+}
+
 SLEEP_SEC=3
 
 while :; do
-    echo " +@fn=1;+@fg=4;+@fg=1;+@bg=4;  $(cpu) +@fg=5;+@fg=1;+@bg=5; ﬙ $(mem) +@fg=6;+@fg=1;+@bg=6;  $(vol) +@fg=7;+@fg=1;+@bg=7;  "
+    echo " +@fn=1;+@fg=3;+@fg=1;+@bg=3;  $(upd) +@fg=4;+@fg=1;+@bg=4;  $(cpu) +@fg=5;+@fg=1;+@bg=5; ﬙ $(mem) +@fg=6;+@fg=1;+@bg=6;  $(vol) +@fg=7;+@fg=1;+@bg=7;  "
 	sleep $SLEEP_SEC
 done
 
