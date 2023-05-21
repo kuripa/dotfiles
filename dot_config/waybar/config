@@ -1,0 +1,107 @@
+{
+	"layer": "top",	
+	"position": "bottom",
+    	"height": 27,
+
+
+    "modules-left": ["sway/mode",  "custom/scratch" ],
+    "modules-center": ["sway/workspaces"],
+    "modules-right": ["network", "temperature", "backlight", "pulseaudio", "battery", "clock", "tray"],
+
+
+	"sway/workspaces": {
+        "disable-scroll": true,
+        "disable-markup": true,
+        "format": "{index}" 
+},
+
+
+	"sway/window": {
+    	"format": "{}",
+    	"max-length": 150
+},
+
+
+	"custom/scratch": {
+   		"interval": 3,
+   		"exec": "swaymsg -t get_tree | jq 'recurse(.nodes[]) | first(select(.name==\"__i3_scratch\")) | .floating_nodes | length | select(. >= 0)'",
+   		"format": " {}", 
+   		"on-click": "swaymsg 'scratchpad show'",
+   		"on-click-right": "swaymsg 'move scratchpad'"
+},
+
+
+    "tray": {
+        "icon-size": 18,
+        "spacing": 15
+},
+
+
+    "clock": {
+    	"timezone": "Europe/Berlin",
+	"locale": "de_DE.utf8",
+        "format": "{:%a%e.%b %R}",
+        "interval": 30
+},
+
+    
+    "battery": {
+        "bat": "BAT1",
+        "states": {
+              "full": 99,
+              "good": 98,
+              "normal": 98,
+              "warning": 20,
+              "critical": 20
+},
+
+        "format": "{icon}  {capacity}%",
+        "format-good": "{icon}  {capacity}%", 
+        "format-full": "  {capacity}%",
+        "format-icons": ["", "", "", "", ""],
+        "interval": 30
+},
+
+
+    "network": {
+        "interface": "wlp0s20f3", 
+        "format-wifi": "   WiFi-On",
+        "format-disconnected": "睊   Disconnected",
+        "interval": 60
+},
+
+
+    "temperature": {
+	   	"thermal-zone": 0,
+		"format": "{icon} {temperatureC}°C",
+		"format-icons":[""],
+		"interval": 30
+},
+
+
+	"backlight": {
+    	"device": "intel_backlight",
+    	"format": "{icon} {percent}%",
+    	"format-icons": ["󰃚","󰃛","󰃜","󰃝","󰃞","󰃟","󰃠"],
+    	"interval": 60
+},
+
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-bluetooth": " {volume}%",
+        "format-muted":"  Mute",
+        "interval": 60,
+
+        "format-icons": {
+        "default": [""]
+},
+            
+       "on-click": "pavucontrol",
+       "on-click-right": "blueman-manager"
+
+
+}
+
+}
+

@@ -1,0 +1,11 @@
+theme = "tokyonight_storm"
+
+[editor]
+line-number = "relative"
+bufferline = "multiple"
+
+
+
+
+[editor.cursor-shape]
+insert = "bar"
