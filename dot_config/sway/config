@@ -4,10 +4,17 @@
 #
 # Read `man 5 sway` for a complete reference.
 ### Variables
-#
-# Logo key. Use Mod1 for Alt.
-set $mod Mod4
+gaps outer 5
+gaps inner 5
 
+# Logo key. Use Mod1 for Alt.
+smart_gaps on 
+smart_borders off 
+
+title_align center
+default_border normal 0px
+
+set $mod Mod4
 set $left h
 set $down j
 set $up k
@@ -182,6 +189,16 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+mode "move_workspace_to_output" {
+    bindsym $left move workspace to output left 
+    bindsym $right move workspace to output right 
+    bindsym $up move workspace to output up 
+    bindsym $down move workspace to output down 
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+o mode "move_workspace_to_output"
 # Include configs from 3 locations:
 #  - /usr/share/sway/config.d
 #  - /etc/sway/config.d

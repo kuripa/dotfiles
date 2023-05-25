@@ -21,7 +21,7 @@ fi
 if [ "$selected" ]; then
     cfg=$(printf '%s\n' "${confedit_list["${selected}"]}")
     # shellcheck disable=SC2154
-    chezmoi "$cfg"
+    chezmoi edit "$cfg"
 # What to do if we just escape without choosing anything.
 else
     echo "Program terminated." && exit 0
