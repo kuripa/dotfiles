@@ -1,0 +1,6 @@
+#!/bin/sh
+# Display the date and time
+
+printf " $(date '+%H:%M')"
+
+

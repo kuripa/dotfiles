@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+chdir="-c lcd %:p:h"
+#
+declare -A confedit_list
+
+# suckless tools
+confedit_list[dwm]="$HOME/suckless/dwm"
+confedit_list[dwmblocks]="$HOME/suckless/dwmblock-async"
+confedit_list[slock]="$HOME/suckless/slock"
+confedit_list[st]="$HOME/suckless/st"
+
+# scripts
+confedit_list[scripts]="$HOME/.local/bin/"
+
+# .config
+confedit_list[nvim]="$HOME/.config/nvim/"
+confedit_list[sxhkd]="$HOME/.config/sxhkd/sxhkdrc"
+confedit_list[tmux]="$HOME/.config/tmux/tmux.conf"
+confedit_list[vifm]="$HOME/.config/vifm"
+confedit_list[sway]="$HOME/.config/sway/config"
+confedit_list[waybar]="$HOME/.config/waybar/"
+
+if [[ $# -eq 1 ]]; then
+    selected=$1
+else
+    selected=$(printf '%s\n' "${!confedit_list[@]}" | fzf)
+fi
+
+if [[ -z $selected ]]; then
+    exit 0
+fi
+
+# What to do when/if we choose a file to edit.
+if [ "$selected" ]; then
+    cfg=$(printf '%s\n' "${confedit_list["${selected}"]}")
+    # shellcheck disable=SC2154
+    #chezmoi edit "$cfg"
+    vim "$chdir" "$cfg"
+# What to do if we just escape without choosing anything.
+else
+    echo "Program terminated." && exit 0
+fi

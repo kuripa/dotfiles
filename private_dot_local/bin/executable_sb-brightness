@@ -1,0 +1,3 @@
+#!/bin/sh
+brightness=$(brillo -G)
+printf "󰃟 %.0f%%" "$brightness" 

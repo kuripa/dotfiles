@@ -1,0 +1,15 @@
+#!/bin/bash
+
+chosen=$(echo -e "Logout\nShutdown\nReboot\nSuspend\nHibernate" | dmenu -p "Logout" -i )
+
+if [[ $chosen = "Logout" ]]; then
+	jwm -exit
+elif [[ $chosen = "Shutdown" ]]; then
+	loginctl poweroff
+elif [[ $chosen = "Reboot" ]]; then
+	loginctl reboot
+elif [[ $chosen = "Suspend" ]]; then
+	loginctl suspend
+elif [[ $chosen = "Hibernate" ]]; then
+	loginctl hibernate
+fi
