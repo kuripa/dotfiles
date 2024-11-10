@@ -6,5 +6,7 @@ if test -f /home/nfuhrman/.env
     source /home/nfuhrman/.env
 end
 
+alias ls="eza"
+
 set -gx EDITOR nvim 
 zoxide init fish | source
