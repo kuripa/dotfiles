@@ -1,0 +1,323 @@
+#/----------------------------------------
+# config
+# Read `man 5 sway` for a complete reference.
+#----------------------------------------
+
+#----------------------------------------
+# Variables
+#----------------------------------------
+set $mod Mod4
+set $left h
+set $down j
+set $up k
+set $right l
+set $term foot
+set $menu fuzzel | xargs swaymsg exec --
+
+#----------------------------------------
+# Output configuration
+# swaymsg -t get_outputs
+#----------------------------------------
+#output * bg ~/art-lake.png fill
+output eDP-1 resolution 1920x1080 position 0,0
+#output DP-3 resolution 2560x1440@164.835Hz position 1920,0
+
+#----------------------------------------
+# Idle configuration
+#----------------------------------------
+exec swayidle -w \
+	timeout 1800 'swaylock -f -c 000000 -k -l' \
+	timeout 3200 'swaymsg "output * dpms off"' \
+		resume 'swaymsg "output * dpms on"' \
+	before-sleep 'swaylock -f -c 000000 -k -l'
+
+#----------------------------------------
+# Input configuration
+#----------------------------------------
+#
+#   input "2:14:SynPS/2_Synaptics_TouchPad" {
+#       dwt enabled
+#       tap enabled
+#       natural_scroll enabled
+#       middle_emulation enabled
+#   }
+#
+   input "1102:4619:DualPoint_Stick" {
+       dwt enabled
+       pointer_accel -0.5 
+       scroll_factor 0.2
+       natural_scroll enabled
+       accel_profile adaptive 
+   }
+# You can get the names of your inputs by running: swaymsg -t get_inputs
+# Read `man 5 sway-input` for more information about this section.
+
+#----------------------------------------
+# Basics:
+#----------------------------------------
+    bindsym $mod+Return exec $term
+    bindsym $mod+c kill
+    bindsym $mod+d exec $menu
+    floating_modifier $mod normal
+    bindsym $mod+Shift+c reload
+    bindsym $mod+Shift+q exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+
+#----------------------------------------
+# Moving around:
+#----------------------------------------
+    bindsym $mod+$left focus left
+    bindsym $mod+$down focus down
+    bindsym $mod+$up focus up
+    bindsym $mod+$right focus right
+
+    bindsym $mod+Left focus left
+    bindsym $mod+Down focus down
+    bindsym $mod+Up focus up
+    bindsym $mod+Right focus right
+
+    bindsym $mod+Shift+$left move left
+    bindsym $mod+Shift+$down move down
+    bindsym $mod+Shift+$up move up
+    bindsym $mod+Shift+$right move right
+
+    bindsym $mod+Shift+Left move left
+    bindsym $mod+Shift+Down move down
+    bindsym $mod+Shift+Up move up
+    bindsym $mod+Shift+Right move right
+
+#----------------------------------------
+# Workspaces:
+#----------------------------------------
+    bindsym $mod+1 workspace number 1
+    bindsym $mod+2 workspace number 2
+    bindsym $mod+3 workspace number 3
+    bindsym $mod+4 workspace number 4
+    bindsym $mod+5 workspace number 5
+    bindsym $mod+6 workspace number 6
+    bindsym $mod+7 workspace number 7
+    bindsym $mod+8 workspace number 8
+    bindsym $mod+9 workspace number 9
+    bindsym $mod+0 workspace number 10
+
+    bindsym $mod+Shift+1 move container to workspace number 1
+    bindsym $mod+Shift+2 move container to workspace number 2
+    bindsym $mod+Shift+3 move container to workspace number 3
+    bindsym $mod+Shift+4 move container to workspace number 4
+    bindsym $mod+Shift+5 move container to workspace number 5
+    bindsym $mod+Shift+6 move container to workspace number 6
+    bindsym $mod+Shift+7 move container to workspace number 7
+    bindsym $mod+Shift+8 move container to workspace number 8
+    bindsym $mod+Shift+9 move container to workspace number 9
+    bindsym $mod+Shift+0 move container to workspace number 10
+
+    bindsym $mod+slash workspace back_and_forth
+    bindsym $mod+m move workspace to output left
+
+#----------------------------------------
+# Layout stuff:
+#----------------------------------------
+    bindsym $mod+b splith
+    bindsym $mod+v splitv
+
+    bindsym $mod+w layout tabbed
+    bindsym $mod+e layout toggle split
+
+    bindsym $mod+f fullscreen
+
+    bindsym $mod+Shift+space floating toggle
+    bindsym $mod+space focus mode_toggle
+
+    bindsym $mod+a focus parent
+
+#----------------------------------------
+# Scratchpad:
+#----------------------------------------
+    bindsym $mod+Shift+minus move scratchpad
+    bindsym $mod+minus scratchpad show
+
+#----------------------------------------
+# Resizing containers:
+#----------------------------------------
+mode "resize" {
+    # left will shrink the containers width
+    # right will grow the containers width
+    # up will shrink the containers height
+    # down will grow the containers height
+    bindsym $left resize shrink width 10px
+    bindsym $down resize grow height 10px
+    bindsym $up resize shrink height 10px
+    bindsym $right resize grow width 10px
+
+    # Ditto, with arrow keys
+    bindsym Left resize shrink width 10px
+    bindsym Down resize grow height 10px
+    bindsym Up resize shrink height 10px
+    bindsym Right resize grow width 10px
+
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+
+# Status Bar:
+# Read `mrn 5 sway-bar` for more information about this section.
+
+bar {
+     swaybar_command waybar
+}
+
+# brightnessctl
+#bindsym XF86MonBrightnessDown exec brightnessctl -e set 5%-
+#bindsym XF86MonBrightnessUp exec brightnessctl -e set 5%+
+
+#----------------------------------------
+# Brightness Control
+#----------------------------------------
+bindsym XF86MonBrightnessDown exec pkexec brillo -u 150000 -q  -U 2.5
+bindsym XF86MonBrightnessUp exec pkexec brillo -u 150000 -q  -A 2.5
+
+#----------------------------------------
+# Audio Control
+#----------------------------------------
+bindsym XF86AudioRaiseVolume exec wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+
+bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+
+#----------------------------------------
+# Styling
+#----------------------------------------
+set {
+  $color1 #f0f0f0
+  $color2 #252525
+  $color3 #cc241d
+}
+
+client.focused          $color1 $color1 $color2 $color1 $color1
+client.focused_inactive $color2 $color2 $color1 $color2 $color2
+client.unfocused        $color2 $color2 $color1 $color2 $color2
+client.urgent           $color3 $color3 $color1 $color3 $color3
+
+default_border pixel 1
+default_floating_border pixel 1
+smart_gaps on 
+gaps inner 8px
+gaps outer 8px
+
+font pango:DejaVu Sans Mono 8
+titlebar_border_thickness 0
+titlebar_padding 1
+titlebar_separator enable
+
+#----------------------------------------
+# Window Rules
+#----------------------------------------
+assign [app_id="org.mozilla.firefox"] 1
+assign [app_id="emacs"] 3
+assign [app_id="org.telegram.desktop"] 8
+assign [app_id="com.discordapp.Discord"] 7
+assign [app_id="vesktop"] 7
+assign [app_id="io.missioncenter.MissionCenter"] 10
+assign [class="TeamSpeak"] 7
+
+for_window [app_id="com.rtosta.zapzap"] {
+  move window to workspace 8
+  layout tabbed
+}
+
+for_window [app_id="pavucontrol"] {
+  floating enable
+  resize set width 50ppt height 50ppt
+  move position center
+}
+
+for_window [app_id="thunar"] {
+  floating enable
+  resize set width 75ppt height 75ppt
+  move position center
+}
+
+for_window [app_id="waypaper"] {
+  floating enable
+  resize set width 50ppt height 75ppt
+  move position center
+}
+
+#----------------------------------------
+# GTK Settings
+#----------------------------------------
+set $gnome-schema org.gnome.desktop.interface
+
+exec_always {
+    gsettings set $gnome-schema gtk-theme 'Adwaita'
+    gsettings set $gnome-schema color-scheme prefer-dark
+    gsettings set $gnome-schema icon-theme 'Adwaita'
+    gsettings set $gnome-schema cursor-theme 'Adwaita'
+    #gsettings set $gnome-schema font-name 'Your font name'
+    gsettings set org.gtk.Settings.FileChooser window-size '(1000, 500)'
+    #gsettings set org.gnome.desktop.interface.wm.preferences theme 'Sweet-Dark-v40'
+    #gsettings set org.gnome.desktop.interface icon-theme 'Sweet-Rainbow'
+    gsettings set org.gnome.desktop.interface cursor-size '24'
+}
+
+
+#----------------------------------------
+# Autostarts
+#----------------------------------------
+exec pipewire
+exec nm-applet
+exec mako
+exec waypaper --restore
+#exec /usr/libexec/polkit-gnome-authentication-agent-1
+#exec flatpak run com.discordapp.Discord
+#exec flatpak run com.rtosta.zapzap
+
+#----------------------------------------
+# SwayFX specific Settings
+#----------------------------------------
+corner_radius 15
+titlebar_separator disable
+blur enable
+blur_xray disable
+blur_passes 4 
+blur_radius 6 
+
+shadows disable 
+shadows_on_csd disable 
+shadow_blur_radius 20 
+shadow_color #FF880077
+shadow_offset 0 0 
+
+layer_effects "waybar" blur enable; blur_ignore_transparent enable
+layer_effects "launcher" blur enable; blur_ignore_transparent enable
+layer_effects "logout_dialog" blur enable; blur_ignore_transparent enable
+#layer_effects waybar blur
+
+input type:keyboard {
+    xkb_layout us,de
+     xkb_options grp:rctrl_toggle
+     xkb_options ctrl:nocaps
+}
+
+# Dropdown terminal
+set $term2 alacritty
+# Start with specific app_id/class
+set $ddterm-id dropdown-terminal
+set $ddterm $term2 --class $ddterm-id
+set $ddterm-resize resize set 100ppt 40ppt, move position 0 0
+
+# resize/move new dropdown terminal windows
+for_window [app_id="$ddterm-id"] {
+  floating enable
+  $ddterm-resize
+  move to scratchpad
+  scratchpad show
+}
+
+# show existing or start new dropdown terminal
+bindsym $mod+g exec swaymsg '[app_id="$ddterm-id"] scratchpad show' \
+  || $ddterm \
+  && sleep .1 && swaymsg '[app_id="$ddterm-id"] $ddterm-resize'
+
+include /etc/sway/config.d/*
