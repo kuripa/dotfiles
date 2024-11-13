@@ -265,11 +265,11 @@ exec_always {
 #----------------------------------------
 # Autostarts
 #----------------------------------------
-exec pipewire
+#exec pipewire
 exec nm-applet
 exec mako
 exec waypaper --restore
-#exec /usr/libexec/polkit-gnome-authentication-agent-1
+exec /usr/libexec/polkit-gnome-authentication-agent-1
 #exec flatpak run com.discordapp.Discord
 #exec flatpak run com.rtosta.zapzap
 
