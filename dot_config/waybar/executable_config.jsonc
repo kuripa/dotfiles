@@ -1,0 +1,196 @@
+{
+	"position": "top",
+	"height": 20,
+	"modules-left": ["network", "sway/language", "group/group-utils"],
+	"modules-center": ["hyprland/workspaces", "sway/workspaces"],
+	"modules-right": [
+        "mpris",
+		"pulseaudio",
+		"backlight",
+		"custom/screenshot",
+		"clock",
+		"battery",
+		"tray",
+		"custom/power"
+	],
+
+	// Modules configuration
+	"group/group-utils": {
+		"orientation": "horizontal",
+		"drawer": {
+			"transition-duration": 500,
+			"children-class": "not-power",
+			"transition-left-to-right": false
+		},
+		"modules": ["custom/utils", "custom/waypaper"]
+	},
+
+	"hyprland/workspaces": {
+		"format": "{icon}",
+		"persistent_workspaces": {
+			"1": [],
+			"2": [],
+			"3": [],
+			"4": [],
+			"5": [],
+			"6": [],
+			"7": [],
+			"8": [],
+			"9": [],
+			"10": []
+		},
+		"format-icons": {
+			"1": "1",
+			"2": "2",
+			"3": "3",
+			"4": "4",
+			"5": "5",
+			"6": "6",
+			"7": "7",
+			"8": "8",
+			"9": "9",
+			"10": "10"
+		}
+	},
+
+	"sway/workspaces": {
+		"disable-scroll": true,
+		"all-outputs": false,
+		"format": "{icon}",
+		"persistent_workspaces": {
+			"1": [],
+			"2": [],
+			"3": [],
+			"4": [],
+			"5": [],
+			"6": [],
+			"7": [],
+			"8": [],
+			"9": [],
+			"10": []
+		},
+		"format-icons": {
+			"1": "1",
+			"2": "2",
+			"3": "3",
+			"4": "4",
+			"5": "5",
+			"6": "6",
+			"7": "7",
+			"8": "8",
+			"9": "9",
+			"10": "10"
+		}
+	},
+	"clock": {
+		"format": "<span font_family='Symbols Nerd Font' size='large'></span> {:%H:%M}",
+		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+		"calendar": {
+			"mode": "year",
+			"mode-mon-col": 3,
+			"weeks-pos": "right",
+			"on-scroll": 1,
+			"format": {
+				"months": "<span color='#ffead3'><b>{}</b></span>",
+				"days": "<span color='#ecc6d9'><b>{}</b></span>",
+				"weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+				"weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+				"today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+			}
+		}
+	},
+	"battery": {
+		"states": {
+			"warning": 30,
+			"critical": 15
+		},
+		"format": "{icon} {capacity}%",
+		"format-charging": "󰂄 {capacity}%",
+		"format-plugged": "󰂄{capacity}%",
+		"format-alt": "{icon} {time}",
+		"format-full": "󱈑 {capacity}%",
+		"format-icons": ["󱊡", "󱊢", "󱊣"]
+	},
+	"network": {
+		"format-wifi": "<span font_family='Symbols Nerd Font' size='large'> </span> {essid}",
+		"format-ethernet": "<span font_family='Symbols Nerd Font' size='large'>󰈀 </span> Connected",
+		"format-linked": "{ifname} (No IP) ",
+		"format-disconnected": "<span font_family='Symbols Nerd Font' size='large'>󰤮</span> Disconnected",
+		"tooltip-format-wifi": "Signal Strenght: {signalStrength}% | Down Speed: {bandwidthDownBits}, Up Speed: {bandwidthUpBits}",
+		"tooltip-format-ethernet": "Interface Name: {ifname}\nIP: {ipaddr}\nGateway: {gwaddr}"
+	},
+	"pulseaudio": {
+		"on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+		"on-double-click": "pavucontrol",
+		"format": "{icon}  {volume}%",
+		"format-muted": "<span font_family='Symbols Nerd Font' size='large'>󰖁</span> Muted",
+		"format-icons": {
+			"headphone": "",
+			"hands-free": "",
+			"headset": "",
+			"phone": "",
+			"portable": "",
+			"car": "",
+			"default": [
+				"<span font_family='Symbols Nerd Font' size='large'></span>",
+				"<span font_family='Symbols Nerd Font' size='large'></span>",
+				"<span font_family='Symbols Nerd Font' size='large'></span>"
+			]
+		}
+	},
+	"backlight": {
+		"device": "intel_backlight",
+		"format": "{icon} {percent}% ",
+		"format-icons": [
+			"<span font_family='Symbols Nerd Font' size='large'></span>"
+		],
+		"on-click": "brillo -u 150000 -S 0",
+		"on-click-middle": "brillo -u 150000 -S 50",
+		"on-click-right": "brillo -u 150000 -S 100"
+	},
+	"tray": {
+		"icon-size": 21,
+		"spacing": 10
+	},
+
+	"custom/power": {
+		"on-click": "wlogout",
+		"format": "<span font_family='Symbols Nerd Font' size='large'></span>"
+	},
+	"custom/screenshot": {
+		"on-click": "flameshot gui",
+		"format": "<span font_family='Symbols Nerd Font' size='large'>󰹑</span>"
+	},
+
+	"sway/language": {
+		"format": "<span font_family='Symbols Nerd Font' size='large'> </span> {short}",
+		"on-click": "swaymsg input type:keyboard xkb_switch_layout next"
+	},
+
+	"custom/utils": {
+		"on-click": "",
+		"format": "<span font_family='Symbols Nerd Font' size='large'>󰍜</span>"
+	},
+
+	"custom/waypaper": {
+		"on-click": "waypaper",
+		"format": "<span font_family='Symbols Nerd Font' size='large'></span>"
+	},
+"mpris": {
+	"format": "{player_icon} | {status_icon} {dynamic}",
+	"format-paused": "{player_icon} | {status_icon} {dynamic}",
+    "title-len": 50,
+    "ellipsis": "...",
+	"player-icons": {
+		"default": "<span font_family='Symbols Nerd Font' size='large'>▶</span>",
+        "firefox": "<span font_family='Symbols Nerd Font' size='large'>󰈹</span>",
+
+	},
+	"status-icons": {
+        "playing": "<span font_family='Symbols Nerd Font' size='large'></span>",
+        "paused": "<span font_family='Symbols Nerd Font' size='large'>⏸</span>",
+	},
+    "dynamic-order": ["title"]
+	// "ignored-players": ["firefox"]
+}
+}
