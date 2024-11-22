@@ -214,7 +214,7 @@ titlebar_separator enable
 #----------------------------------------
 # Window Rules
 #----------------------------------------
-assign [app_id="org.mozilla.firefox"] 1
+assign [app_id="org.mozilla.firefox"] 2
 assign [app_id="emacs"] 3
 assign [app_id="org.telegram.desktop"] 8
 assign [app_id="com.discordapp.Discord"] 7
