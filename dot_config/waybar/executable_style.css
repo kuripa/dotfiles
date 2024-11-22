@@ -71,7 +71,7 @@ tooltip {
 }
 
 #workspaces button:hover {
-    background-color: rgba(255, 0, 0, 1);
+    background-color: rgba(0, 0, 0, 1);
 	color: @color1;
 	border-radius: 9px;
     /* animation: ws_hover 20s ease-in-out 1; */
