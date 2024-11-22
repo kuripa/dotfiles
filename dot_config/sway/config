@@ -270,7 +270,9 @@ exec_always {
 exec nm-applet
 exec mako
 exec waypaper --restore
-exec /usr/libexec/polkit-gnome-authentication-agent-1
+#exec --no-startup-id hyprpolkit
+exec systemctl --user start hyprpolkitagent
+#exec /usr/libexec/polkit-gnome-authentication-agent-1
 #exec flatpak run com.discordapp.Discord
 #exec flatpak run com.rtosta.zapzap
 
