@@ -281,7 +281,7 @@ exec systemctl --user start hyprpolkitagent
 #----------------------------------------
 corner_radius 15
 titlebar_separator disable
-blur enable
+blur disable 
 blur_xray disable
 blur_passes 4 
 blur_radius 6 
