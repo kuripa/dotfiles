@@ -245,6 +245,9 @@ for_window [app_id="waypaper"] {
   move position center
 }
 
+for_window [app_id="Alacritty"] {
+    blur enable
+}
 #----------------------------------------
 # GTK Settings
 #----------------------------------------
