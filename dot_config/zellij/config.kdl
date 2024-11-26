@@ -4,7 +4,7 @@
 
 keybinds clear-defaults=true {
     locked {
-        bind "Ctrl a" { SwitchToMode "normal"; }
+        bind "Ctrl f" { SwitchToMode "normal"; }
     }
     pane {
         bind "left" { MoveFocus "left"; }
@@ -172,7 +172,7 @@ keybinds clear-defaults=true {
         bind "Alt 9" { GoToTab 9; SwitchToMode "locked"; }
     }
     shared_except "locked" "renametab" "renamepane" {
-        bind "Ctrl a" { SwitchToMode "locked"; }
+        bind "Ctrl f" { SwitchToMode "locked"; }
         bind "Ctrl q" { Quit; }
     }
     shared_except "locked" "entersearch" {
