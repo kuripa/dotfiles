@@ -1,0 +1,6 @@
+{
+	"custom/screenshot": {
+		"on-click": "flameshot gui",
+		"format": "<span font_family='Symbols Nerd Font' size='large'>󰹑</span>"
+	},
+}

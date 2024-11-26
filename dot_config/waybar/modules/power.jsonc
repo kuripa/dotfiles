@@ -1,0 +1,6 @@
+{
+	"custom/power": {
+		"on-click": "wlogout",
+		"format": "<span font_family='Symbols Nerd Font' size='large'></span>"
+	},
+}

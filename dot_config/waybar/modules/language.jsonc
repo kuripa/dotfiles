@@ -1,0 +1,6 @@
+{
+	"sway/language": {
+		"format": "<span font_family='Symbols Nerd Font' size='large'> </span> {short}",
+		"on-click": "swaymsg input type:keyboard xkb_switch_layout next"
+	},
+}

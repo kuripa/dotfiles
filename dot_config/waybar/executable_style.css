@@ -1,5 +1,6 @@
-@define-color color1 #101010;
-@define-color color2 #f0f0f0;
+@define-color color1 #161616;
+@define-color color2 #78a9ff;
+@define-color text1  #ffffff;
 @define-color color3 #252525;
 
 * {
@@ -39,7 +40,7 @@ tooltip {
     padding-left: 3px;
     padding-right: 3px;
     margin-right: 0px;
-    color: @color2;
+    color: @text1;
     /* animation: ws_normal 20s ease-in-out 1; */
 }
 
@@ -78,22 +79,21 @@ tooltip {
     /* transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682); */
 }
 
+#battery, 
 #custom-waypaper, 
 #custom-utils, 
 #custom-power, 
 #custom-screenshot, 
 #language, 
 #clock, 
-#battery, 
 #pulseaudio, 
 #network, 
 #workspaces, 
-#backlight, 
 #mpris,
 #tray {
     opacity: 1;
 	background-color: @color1;
-    color: @color2;
+    color: @text1;
     margin: 4px 0px 4px 0px;
     padding: 2px 8px 2px 8px;
 }
@@ -105,14 +105,82 @@ tooltip {
 
 
 #clock {
-    color: @color2;
-	border-radius: 9px 0px 0px 9px;
+    color: @text1;
+	border-radius: 9px 9px 9px 9px;
+    margin-right: 10px;
+}
+
+#network {
+	color: @text;
+	border-radius: 9px 9px 9px 9px;
+    margin-left: 10px
+}
+
+#pulseaudio {
+	color: @text1;
+	border-radius: 9px 9px 9px 9px;
+    margin-right: 10px;
+}
+
+#mpris {
+	color: @text1;
+	border-radius: 9px 9px 9px 9px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+#tray {
+    border-radius: 9px 9px 9px 9px;
+    margin-right: 10px;
+}
+
+#tray menu {
+   border-radius: 9px 9px 9px 9px;
+   color: @text1;
+   background-color: @color1;
+	border-width: 2px;
+	border-style: solid;
+	border-color: @color3;
+}
+
+#custom-power {
+    color: @text1;
+    border-radius: 9px 9px 9px 9px;
+    margin-right: 10px;
+}
+
+#custom-screenshot {
+    color: @text1;
+    border-radius: 9px 9px 9px 9px;
+    margin-right: 10px;
+}
+
+#language {
+    color: @text1;
+    border-radius: 9px 9px 9px 9px;
+    margin-left: 10px;
+}
+
+#custom-utils {
+    color: @text1;
+    border-radius: 9px 9px 9px 9px;
+    margin-left: 10px;
+}
+
+#custom-waypaper {
+    color: @text1;
+    border-radius: 9px 9px 9px 9px;
+    margin-left: 10px;
+}
+
+#group-utils{
+    color: @text1;
 }
 
 #battery {
     color: @color2;
     margin-right: 10px;
-	border-radius: 0px 9px 9px 0px;
+	border-radius: 9px 9px 9px 9px;
 }
 
 #battery.charging {
@@ -128,78 +196,3 @@ tooltip {
     background-color: #c49ea0;
     color: @color1;
 }
-
-#network {
-	color: @color2;
-	border-radius: 9px 9px 9 9px;
-    margin-left: 10px
-}
-
-#pulseaudio {
-	color: @color2;
-	border-radius: 9px 0px 0px 9px;
-}
-
-
-#backlight {
-	color: @color2;
-	border-radius: 0px 9px 9px 0px;
-    margin-right: 10px;
-}
-
-#mpris {
-	color: @color2;
-	border-radius: 9px 9px 9px 9px;
-    margin-right: 10px;
-    margin-left: 10px;
-}
-
-#tray {
-    border-radius: 9px 9px 9px 9px;
-    margin-right: 10px;
-}
-
-#tray menu {
-   border-radius: 9px 9px 9px 9px;
-   color: @color2;
-   background-color: @color1;
-	border-width: 2px;
-	border-style: solid;
-	border-color: @color3;
-}
-
-#custom-power {
-    color: @color2;
-    border-radius: 9px 9px 9px 9px;
-    margin-right: 10px;
-}
-
-#custom-screenshot {
-    color: @color2;
-    border-radius: 9px 9px 9px 9px;
-    margin-right: 10px;
-}
-
-#language {
-    color: @color2;
-    border-radius: 9px 9px 9px 9px;
-    margin-left: 10px;
-}
-
-#custom-utils {
-    color: @color2;
-    border-radius: 9px 9px 9px 9px;
-    margin-left: 10px;
-}
-
-#custom-waypaper {
-    color: @color2;
-    border-radius: 9px 9px 9px 9px;
-    margin-left: 10px;
-}
-
-#group-utils{
-    color: @color2;
-    margin-left: 10px;
-}
-

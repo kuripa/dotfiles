@@ -1,0 +1,19 @@
+{
+"mpris": {
+	"format": "{player_icon} | {status_icon} {dynamic}",
+	"format-paused": "{player_icon} | {status_icon} {dynamic}",
+    "title-len": 50,
+    "ellipsis": "...",
+	"player-icons": {
+		"default": "<span font_family='Symbols Nerd Font' size='large'>▶</span>",
+        "firefox": "<span font_family='Symbols Nerd Font' size='large'>󰈹</span>",
+
+	},
+	"status-icons": {
+        "playing": "<span font_family='Symbols Nerd Font' size='large'></span>",
+        "paused": "<span font_family='Symbols Nerd Font' size='large'>⏸</span>",
+	},
+    "dynamic-order": ["title"]
+	// "ignored-players": ["firefox"]
+}
+}
