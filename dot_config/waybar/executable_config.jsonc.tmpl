@@ -6,7 +6,7 @@
     "passthrough": false,
     "reload_style_on_change": true,
 
-    "modules-left": ["network", "hyprland/language", "sway/language", "group/group-utils"],
+    "modules-left": ["network", "hyprland/language", "sway/language", "load", "group/group-utils"],
     "modules-center": ["hyprland/workspaces", "sway/workspaces"],
     {{- if eq .chezmoi.hostname "nick-laptop" }}
     "modules-right": [
@@ -41,5 +41,6 @@
 		"~/.config/waybar/modules/workspaces.jsonc",
 		"~/.config/waybar/modules/network.jsonc",
 		"~/.config/waybar/modules/battery.jsonc",
+		"~/.config/waybar/modules/load.jsonc",
 	],
 }

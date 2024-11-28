@@ -1,0 +1,7 @@
+{
+    "load": {
+        "format": "<span font_family='Symbols Nerd Font' size='large'></span> {}",
+        "interval": 10,
+        "max-length": 10
+    }
+}

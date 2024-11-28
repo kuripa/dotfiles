@@ -79,6 +79,7 @@ tooltip {
     /* transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682); */
 }
 
+#load,
 #battery, 
 #custom-waypaper, 
 #custom-utils, 
@@ -156,6 +157,12 @@ tooltip {
 }
 
 #language {
+    color: @text1;
+    border-radius: 9px 9px 9px 9px;
+    margin-left: 10px;
+}
+
+#load {
     color: @text1;
     border-radius: 9px 9px 9px 9px;
     margin-left: 10px;
