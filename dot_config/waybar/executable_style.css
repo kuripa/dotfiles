@@ -82,6 +82,7 @@ tooltip {
 #load,
 #battery, 
 #custom-waypaper, 
+#custom-hyprpicker, 
 #custom-utils, 
 #custom-power, 
 #custom-screenshot, 
@@ -175,6 +176,12 @@ tooltip {
 }
 
 #custom-waypaper {
+    color: @text1;
+    border-radius: 9px 9px 9px 9px;
+    margin-left: 10px;
+}
+
+#custom-hyprpicker {
     color: @text1;
     border-radius: 9px 9px 9px 9px;
     margin-left: 10px;

@@ -6,7 +6,7 @@
 			"children-class": "not-power",
 			"transition-left-to-right": false
 		},
-		"modules": ["custom/utils", "custom/waypaper"]
+		"modules": ["custom/utils", "custom/waypaper", "custom/hyprpicker"]
 	},
 	
     "custom/utils": {
@@ -17,5 +17,9 @@
 	"custom/waypaper": {
 		"on-click": "waypaper",
 		"format": "<span font_family='Symbols Nerd Font' size='large'></span>"
+	"custom/hyprpicker": {
+		"on-click": "hyprpicker -a -f hex",
+		"format": "<span font_family='Symbols Nerd Font' size='large'></span>",
+        "tooltip-format": "Color Picker",
 	},
 }
