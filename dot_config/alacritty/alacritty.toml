@@ -6,9 +6,11 @@ TERM = "xterm-256color"
 
 [window]
 decorations = "buttonless"
+padding = { x = 5, y = 5 }
 dynamic_padding = false
 opacity = 0.95
 startup_mode = "Maximized"
+
 [font]
 size = 12.0
 
