@@ -16,7 +16,9 @@
 
 	"custom/waypaper": {
 		"on-click": "waypaper",
-		"format": "<span font_family='Symbols Nerd Font' size='large'></span>"
+		"format": "<span font_family='Symbols Nerd Font' size='large'></span>",
+        "tooltip-format": "Set Wallpaper",
+	},
 	"custom/hyprpicker": {
 		"on-click": "hyprpicker -a -f hex",
 		"format": "<span font_family='Symbols Nerd Font' size='large'></span>",
