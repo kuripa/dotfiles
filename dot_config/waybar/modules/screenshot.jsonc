@@ -1,6 +1,7 @@
 {
 	"custom/screenshot": {
-		"on-click": "flameshot gui",
-		"format": "<span font_family='Symbols Nerd Font' size='large'>󰹑</span>"
+		"on-click": "XDG_CURRENT_DESKTOP=sway flameshot gui",
+		"format": "<span font_family='Symbols Nerd Font' size='large'>󰹑</span>",
+        "tooltip-format": "Screenshot",
 	},
 }
