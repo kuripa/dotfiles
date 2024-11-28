@@ -10,8 +10,7 @@ set $mod Mod4
 set $left h
 set $down j
 set $up k
-set $right l
-#set $term foot
+set $right l 
 set $term alacritty 
 set $menu fuzzel | xargs swaymsg exec --
 
@@ -274,8 +273,8 @@ exec nm-applet
 exec mako
 exec waypaper --restore
 #exec --no-startup-id hyprpolkit
-exec systemctl --user start hyprpolkitagent
-#exec /usr/libexec/polkit-gnome-authentication-agent-1
+#exec systemctl --user start hyprpolkitagent
+exec /usr/libexec/xdg-desktop-portal-gtk
 #exec flatpak run com.discordapp.Discord
 #exec flatpak run com.rtosta.zapzap
 
