@@ -43,12 +43,12 @@ exec swayidle -w \
 #       middle_emulation enabled
 #   }
 #
-   input "1102:4619:DualPoint_Stick" {
+   input "5426:166:Razer_Razer_Viper_V2_Pro" {
        dwt enabled
-       pointer_accel -0.5 
-       scroll_factor 0.2
-       natural_scroll enabled
-       accel_profile adaptive 
+       pointer_accel 0 
+       scroll_factor 1 
+       natural_scroll false 
+       accel_profile flat 
    }
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
