@@ -12,7 +12,11 @@
 }
 {
     "label" : "logout",
+    {{- if eq (env "XDG_CURRENT_DESKTOP") "Hyprland" }}
+    "action" : "sleep 1; hyprctl dispatch exit",
+    {{- else if eq (env "XDG_CURRENT_DESKTOP") "sway" }}
     "action" : "swaymsg exit",
+    {{- end }}
     "text" : "Logout",
     "keybind" : "e"
 }
