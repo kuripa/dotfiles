@@ -1,0 +1,168 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "vim_operator == none && !VimWaiting && vim_mode != insert && !Terminal && mode != single_line",
+    "bindings": {
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-j": "vim::ScrollDown",
+      "ctrl-k": "vim::ScrollUp",
+      "ctrl-q": "command_palette::Toggle",
+      "ctrl-a": "editor::SelectEnclosingSymbol",
+      "ctrl-s": "editor::SelectSmallerSyntaxNode",
+      "shift-f": "editor::UnfoldLines",
+      "shift-h": "pane::ActivatePreviousItem",
+      "shift-l": "pane::ActivateNextItem",
+      "alt-j": "editor::MoveLineDown",
+      "alt-k": "editor::MoveLineUp",
+      "space f": "file_finder::Toggle",
+      "space c": "pane::CloseActiveItem",
+      "space t": "workspace::NewCenterTerminal",
+      "space e": "project_panel::ToggleFocus",
+      "space p e": "workspace::ToggleLeftDock",
+      "space q": "pane::CloseAllItems",
+      "space h": "buffer_search::Dismiss",
+      "space a": "workspace::SaveAll",
+      "ctrl-space": "workspace::ToggleBottomDock",
+      "space l s": "project_symbols::Toggle",
+      "space l i": "editor::GoToImplementationSplit",
+      "space l r": "editor::Rename",
+      "space s t": "workspace::NewSearch",
+      "space b l": "pane::CloseItemsToTheRight",
+      "space b h": "pane::CloseItemsToTheLeft",
+      "space b a": "pane::ReopenClosedItem",
+      "space z f": ["workspace::SendKeystrokes", "shift-v shift-f ctrl-c"],
+      "space z a": [
+        "workspace::SendKeystrokes",
+        "g g shift-v shift-g shift-f ctrl-c g g"
+      ],
+      "space z u": [
+        "workspace::SendKeystrokes",
+        "g g shift-v shift-g space z z ctrl-c g g"
+      ],
+      "space /": "editor::ToggleComments",
+      "space r": "command_palette::Toggle",
+      "space w": "workspace::Save",
+      "space 1": ["pane::ActivateItem", 0],
+      "space 2": ["pane::ActivateItem", 1],
+      "space 3": ["pane::ActivateItem", 2],
+      "space 4": ["pane::ActivateItem", 3],
+      "space 5": ["pane::ActivateItem", 4],
+      "space 6": ["pane::ActivateItem", 5],
+      "space 7": ["pane::ActivateItem", 6],
+      "space 8": ["pane::ActivateItem", 7],
+      "space g b": "git::Branch",
+      "ctrl-n": "menu::SelectNext", // Navigate down in lists (e.g., file finder, search results)
+      "ctrl-p": "menu::SelectPrevious" // Navigate up in lists
+    }
+  },
+  {
+    "context": "Workspace && !VimWaiting && vim_mode != insert",
+    "bindings": {
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-n": "menu::SelectNext", // Ensure workspace-wide list navigation
+      "ctrl-p": "menu::SelectPrevious"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-space": "workspace::ToggleBottomDock",
+      "ctrl-o": "workspace::NewTerminal",
+      "ctrl-n": "pane::ActivateNextItem",
+      "ctrl-p": "pane::ActivatePreviousItem",
+      "ctrl-b": "pane::CloseItemsToTheLeft",
+      "ctrl-i": "pane::CloseItemsToTheRight",
+      "ctrl-k": "pane::CloseInactiveItems",
+      "ctrl-q": "pane::CloseActiveItem",
+      "ctrl-l": "terminal::Clear"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == visual && !menu && !Terminal",
+    "bindings": {
+      "shift-k": "editor::MoveLineUp",
+      "shift-j": "editor::MoveLineDown",
+      "shift-f": "editor::Fold",
+      "alt zio": "editor::UnfoldLines",
+      "space z z": [
+        "workspace::SendKeystrokes",
+        "alt zio ctrl-c h % shift-i ctrl-c"
+      ],
+      "space /": "editor::ToggleComments"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert && !Terminal",
+    "bindings": {
+      "jk": "vim::NormalBefore",
+      "kj": "vim::NormalBefore",
+      "j k": "vim::NormalBefore",
+      "k j": "vim::NormalBefore",
+      "ctrl-n": "menu::SelectNext", // Navigate autocomplete suggestions
+      "ctrl-p": "menu::SelectPrevious"
+    }
+  },
+  {
+    "context": "!renaming && ProjectPanel && !Terminal && !VimWaiting && vim_mode != insert && !editing",
+    "bindings": {
+      "a": "project_panel::NewFile",
+      "d": "project_panel::Delete",
+      "r": "project_panel::Rename",
+      "space e": "workspace::ActivatePaneRight",
+      "ctrl-n": "menu::SelectNext", // Navigate project panel list
+      "ctrl-p": "menu::SelectPrevious"
+    }
+  },
+  {
+    "context": "Workspace && !VimWaiting && vim_mode != insert",
+    "bindings": {
+      "space r p": "projects::OpenRecent"
+    }
+  },
+  {
+    "context": "(Editor || ProjectPanel || Terminal || OutLinePanel) && vim_mode != insert && !VimWaiting && !editing",
+    "bindings": {
+      "ctrl-right": "vim::ResizePaneRight",
+      "ctrl-left": "vim::ResizePaneLeft",
+      "ctrl-up": "vim::ResizePaneUp",
+      "ctrl-down": "vim::ResizePaneDown"
+    }
+  },
+  {
+    "context": "Editor && vim_mode != insert && !VimWaiting",
+    "bindings": {
+      "space l j": "editor::GoToDiagnostic"
+    }
+  },
+  {
+    "context": "Editor && vim_mode != insert && !VimWaiting && mode != single_line",
+    "bindings": {
+      "g d": "editor::GoToDefinition",
+      "g i": "editor::GoToImplementation",
+      "g r": "editor::FindAllReferences"
+    }
+  },
+  {
+    "context": "(Editor && vim_mode == insert) || Terminal || mode == single_line",
+    "bindings": {
+      "space": null
+    }
+  },
+  {
+    "context": "vim_mode == normal || vim_mode == visual",
+    "bindings": {
+      "s": "vim::PushSneak",
+      "shift-s": "vim::PushSneakBackward"
+    }
+  }
+]
