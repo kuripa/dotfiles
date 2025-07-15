@@ -6,7 +6,7 @@
 * {
     border: none;
     border-radius: 0px;
-    font-family: InconsolataMono Nerd Font;
+    font-family: Terminess Nerd Font;
     font-size: 12px;
     min-height: 10px;   
 }
@@ -92,6 +92,7 @@ tooltip {
 #network, 
 #workspaces, 
 #mpris,
+#power-profiles-daemon,
 #tray {
     opacity: 1;
 	background-color: @color1;
@@ -197,6 +198,7 @@ tooltip {
 	border-radius: 9px 9px 9px 9px;
 }
 
+
 #battery.charging {
     color: #9ec49f;
 }
@@ -209,4 +211,18 @@ tooltip {
 #battery.critical:not(.charging) {
     background-color: #c49ea0;
     color: @color1;
+}
+
+#power-profiles-daemon{
+  color: @color2;
+  margin-right: 10px;
+	border-radius: 9px 9px 9px 9px;
+}
+
+#power-profiles-daemon.performance{
+}
+#power-profiles-daemon.balanced{
+}
+#power-profiles-daemon.power-saver{
+    color: #9ec49f;
 }

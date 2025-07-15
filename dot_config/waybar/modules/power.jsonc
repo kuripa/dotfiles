@@ -1,8 +1,8 @@
 {
 	"custom/power": {
 		"on-click": "wlogout",
-		"format": "<span font_family='Symbols Nerd Font' size='large'></span>",
-        "tooltip-format": "Power Menu",
+		"format": "<span font_family='symbols nerd font' size='large'></span>",
+        "tooltip-format": "power menu",
 
 	},
 }
