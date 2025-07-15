@@ -1,0 +1,12 @@
+{
+"power-profiles-daemon": {
+  "format": "{icon}",
+  "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+  "tooltip": true,
+  "format-icons": {
+    "performance": "<span font_family='Symbols Nerd Font' size='large'></span>",
+    "balanced": "<span font_family='Symbols Nerd Font' size='large'></span>",
+    "power-saver": "<span font_family='Symbols Nerd Font' size='large'></span>",
+  },
+  }
+}
