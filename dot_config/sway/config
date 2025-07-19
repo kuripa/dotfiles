@@ -49,6 +49,12 @@ exec swayidle -w \
        natural_scroll false 
        accel_profile flat 
    }
+
+input type:keyboard {
+    xkb_layout us,de
+     xkb_options grp:rctrl_toggle
+     xkb_options ctrl:nocaps
+}
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 
@@ -279,13 +285,6 @@ exec waypaper --restore
 exec /usr/libexec/xdg-desktop-portal-gtk
 #exec flatpak run com.discordapp.Discord
 #exec flatpak run com.rtosta.zapzap
-
-
-input type:keyboard {
-    xkb_layout us,de
-     xkb_options grp:rctrl_toggle
-     xkb_options ctrl:nocaps
-}
 
 # Dropdown terminal
 set $term2 alacritty
