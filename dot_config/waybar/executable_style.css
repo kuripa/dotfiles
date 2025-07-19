@@ -1,37 +1,52 @@
 @define-color color1 #161616;
 @define-color color2 #78a9ff;
-@define-color text1  #ffffff;
 @define-color color3 #252525;
+@define-color text1  #ffffff;
+
+@define-color base00 #161616;
+@define-color base01 #262626;
+@define-color base02 #393939;
+@define-color base03 #525252;
+@define-color base04 #dde1e6;
+@define-color base05 #f2f4f8;
+@define-color base06 #ffffff;
+@define-color base07 #08bdba;
+@define-color base08 #3ddbd9;
+@define-color base09 #78a9ff;
+@define-color base0A #ee5396;
+@define-color base0B #33b1ff;
+@define-color base0C #ff7eb6;
+@define-color base0D #42be65;
+@define-color base0E #be95ff;
+@define-color base0F #82cfff;
 
 * {
     border: none;
     border-radius: 0px;
     font-family: Terminess Nerd Font;
     font-size: 12px;
-    min-height: 10px;   
+    min-height: 10px;
 }
 
 window#waybar {
-    background: rgba(0, 0, 0, 0);
 }
 
-window#waybar>box {
+window#waybar > box {
     margin: 0px 0px 0px 0px;
-    background-color: rgba(0, 0, 0, 0.1);
-	border-radius: 0px;
+    background: @color1;
+    /* background-color: rgba(0, 0, 0, 1); */
+    border-radius: 0px;
 }
 
 tooltip {
-	background: @color1;
-	border-radius: 9px;
-	border-width: 2px;
-	border-style: solid;
-	border-color: @color3;
-	}
+    background: @color1;
+    border-radius: 9px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: @color3;
+}
 
 #workspaces button {
-    box-shadow: none;
-	text-shadow: none;
     padding: 0px;
     border-radius: 9px;
     margin-top: 3px;
@@ -41,163 +56,153 @@ tooltip {
     padding-right: 3px;
     margin-right: 0px;
     color: @text1;
-    /* animation: ws_normal 20s ease-in-out 1; */
+    background-color: @color3;
 }
 
 #workspaces button.empty {
     border-radius: 9px;
-	background-color: @color1;
+    background-color: @color3;
 }
 
 #workspaces button.focused {
     color: @color1;
     background-color: @color2;
     border-radius: 9px;
-    /* animation: ws_hover 20s ease-in-out 1; */
-    /* transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682); */
 }
 
 #workspaces button.active {
     color: @color1;
     background-color: @color2;
     border-radius: 9px;
-    /* animation: tb_active 20s ease-in-out 1; */
-    /* transition: all 0.4s cubic-bezier(.55,-0.68,.48,1.682); */
 }
 
 #workspaces button.urgent {
     color: @color1;
-    background-color: #9ec3c4;
+    background-color: @color3;
     border-radius: 9px;
 }
 
 #workspaces button:hover {
-    background-color: rgba(0, 0, 0, 1);
-	color: @color1;
-	border-radius: 9px;
-    /* animation: ws_hover 20s ease-in-out 1; */
-    /* transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682); */
+    box-shadow: none; /* Remove predefined box-shadow */
+    text-shadow: none; /* Remove predefined text-shadow */
+    background: none; /* Remove predefined background color (white) */
+    transition: none; /* Disable predefined animations */
+    background-color: @text1;
+    color: @color1;
+    border-radius: 9px;
 }
 
+#backlight,
+#battery,
+#clock,
+#custom-hyprpicker,
+#custom-power,
+#custom-screenshot,
+#custom-utils,
+#custom-waypaper,
+#language,
 #load,
-#battery, 
-#custom-waypaper, 
-#custom-hyprpicker, 
-#custom-utils, 
-#custom-power, 
-#custom-screenshot, 
-#language, 
-#clock, 
-#pulseaudio, 
-#network, 
-#workspaces, 
 #mpris,
+#network,
 #power-profiles-daemon,
-#tray {
+#pulseaudio,
+#tray,
+#workspaces {
+    border-radius: 9px 9px 9px 9px;
     opacity: 1;
-	background-color: @color1;
     color: @text1;
     margin: 4px 0px 4px 0px;
     padding: 2px 8px 2px 8px;
 }
 
-#workspaces {
-    padding: 0px 5px 0px 5px;
-    border-radius: 9px
+#backlight:hover,
+#battery:hover,
+#clock:hover,
+#custom-hyprpicker:hover,
+#custom-power:hover,
+#custom-screenshot:hover,
+#custom-utils:hover,
+#custom-waypaper:hover,
+#language:hover,
+#power-profiles-daemon:hover,
+#pulseaudio:hover {
+    background-color: @color3;
 }
 
+#workspaces {
+    padding: 0px 5px 0px 5px;
+}
 
 #clock {
-    color: @text1;
-	border-radius: 9px 9px 9px 9px;
-    margin-right: 10px;
 }
 
 #network {
-	color: @text;
-	border-radius: 9px 9px 9px 9px;
-    margin-left: 10px
+    margin-left: 10px;
 }
 
 #pulseaudio {
-	color: @text1;
-	border-radius: 9px 9px 9px 9px;
     margin-right: 10px;
 }
 
+#backlight {
+    margin-right: 10px;
+}
 #mpris {
-	color: @text1;
-	border-radius: 9px 9px 9px 9px;
     margin-right: 10px;
     margin-left: 10px;
 }
 
 #tray {
-    border-radius: 9px 9px 9px 9px;
     margin-right: 10px;
 }
 
 #tray menu {
-   border-radius: 9px 9px 9px 9px;
-   color: @text1;
-   background-color: @color1;
-	border-width: 2px;
-	border-style: solid;
-	border-color: @color3;
+    color: @text1;
+    background-color: @color1;
+    border-width: 2px;
+    border-style: solid;
+    border-color: @color3;
 }
 
 #custom-power {
-    color: @text1;
-    border-radius: 9px 9px 9px 9px;
     margin-right: 10px;
+    margin-left: 10px;
 }
 
 #custom-screenshot {
-    color: @text1;
-    border-radius: 9px 9px 9px 9px;
-    margin-right: 10px;
+    margin-left: 10px;
 }
 
 #language {
-    color: @text1;
-    border-radius: 9px 9px 9px 9px;
+    margin-left: 10px;
+}
+
+#language:active {
     margin-left: 10px;
 }
 
 #load {
-    color: @text1;
-    border-radius: 9px 9px 9px 9px;
     margin-left: 10px;
 }
 
 #custom-utils {
-    color: @text1;
-    border-radius: 9px 9px 9px 9px;
     margin-left: 10px;
 }
 
 #custom-waypaper {
-    color: @text1;
-    border-radius: 9px 9px 9px 9px;
     margin-left: 10px;
 }
 
 #custom-hyprpicker {
-    color: @text1;
-    border-radius: 9px 9px 9px 9px;
     margin-left: 10px;
 }
 
-#group-utils{
-    color: @text1;
+#group-utils {
 }
 
 #battery {
-    color: @color2;
     margin-right: 10px;
-	border-radius: 9px 9px 9px 9px;
 }
-
 
 #battery.charging {
     color: #9ec49f;
@@ -213,16 +218,16 @@ tooltip {
     color: @color1;
 }
 
-#power-profiles-daemon{
-  color: @color2;
-  margin-right: 10px;
-	border-radius: 9px 9px 9px 9px;
+#power-profiles-daemon {
+    margin-right: 10px;
 }
 
-#power-profiles-daemon.performance{
+#power-profiles-daemon.performance {
+    color: @base0A;
 }
-#power-profiles-daemon.balanced{
+#power-profiles-daemon.balanced {
+    color: @base0B;
 }
-#power-profiles-daemon.power-saver{
-    color: #9ec49f;
+#power-profiles-daemon.power-saver {
+    color: @base0D;
 }

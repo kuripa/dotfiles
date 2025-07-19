@@ -1,27 +1,32 @@
 {
-        "group/group-utils": {
-		"orientation": "horizontal",
-		"drawer": {
-			"transition-duration": 500,
-			"children-class": "not-power",
-			"transition-left-to-right": false
-		},
-		"modules": ["custom/utils", "custom/waypaper", "custom/hyprpicker"]
-	},
-	
-    "custom/utils": {
-		"on-click": "",
-		"format": "<span font_family='Symbols Nerd Font' size='large'>󰍜</span>"
-	},
+  "group/group-utils": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 500,
+      "children-class": "not-power",
+      "transition-left-to-right": true,
+      "click-to-reveal": false,
+    },
+    "modules": [
+      "custom/utils",
+      "custom/screenshot",
+      "custom/waypaper",
+      "custom/hyprpicker",
+    ],
+  },
 
-	"custom/waypaper": {
-		"on-click": "waypaper",
-		"format": "<span font_family='Symbols Nerd Font' size='large'></span>",
-        "tooltip-format": "Set Wallpaper",
-	},
-	"custom/hyprpicker": {
-		"on-click": "hyprpicker -a -f hex",
-		"format": "<span font_family='Symbols Nerd Font' size='large'></span>",
-        "tooltip-format": "Color Picker",
-	},
+  "custom/utils": {
+    "format": "<span font_family='Symbols Nerd Font' size='large'>󰍜</span>",
+  },
+
+  "custom/waypaper": {
+    "on-click": "waypaper",
+    "format": "<span font_family='Symbols Nerd Font' size='large'></span>",
+    "tooltip-format": "Set Wallpaper",
+  },
+  "custom/hyprpicker": {
+    "on-click": "hyprpicker -a -f hex",
+    "format": "<span font_family='Symbols Nerd Font' size='large'></span>",
+    "tooltip-format": "Color Picker",
+  },
 }

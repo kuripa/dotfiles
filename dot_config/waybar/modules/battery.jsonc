@@ -1,14 +1,14 @@
 {
-	"battery": {
-		"states": {
-			"warning": 30,
-			"critical": 15
-		},
-		"format": "{icon} {capacity}%",
-		"format-charging": "󰂄 {capacity}%",
-		"format-plugged": "󰂄{capacity}%",
-		"format-alt": "{icon} {time}",
-		"format-full": "󱈑 {capacity}%",
-		"format-icons": ["󱊡", "󱊢", "󱊣"]
-	},
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15,
+    },
+    "format": "<span font_family='Symbols Nerd Font' size='large'>{icon}</span> {capacity}%",
+    "format-charging": "<span font_family='Symbols Nerd Font' size='large'>󰂄</span> {capacity}%",
+    "format-plugged": "<span font_family='Symbols Nerd Font' size='large'>󰂄</span>{capacity}%",
+    "format-alt": "<span font_family='Symbols Nerd Font' size='large'>{icon}</span> {time}",
+    "format-full": "<span font_family='Symbols Nerd Font' size='large'>󱈑</span> {capacity}%",
+    "format-icons": ["󱊡", "󱊢", "󱊣"],
+  },
 }

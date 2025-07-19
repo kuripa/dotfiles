@@ -1,21 +1,21 @@
 {
-	"pulseaudio": {
-		"on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-		"on-double-click": "pavucontrol",
-		"format": "{icon}  {volume}%",
-		"format-muted": "<span font_family='Symbols Nerd Font' size='large'>󰖁</span> Muted",
-		"format-icons": {
-			"headphone": "",
-			"hands-free": "",
-			"headset": "",
-			"phone": "",
-			"portable": "",
-			"car": "",
-			"default": [
-				"<span font_family='Symbols Nerd Font' size='large'></span>",
-				"<span font_family='Symbols Nerd Font' size='large'></span>",
-				"<span font_family='Symbols Nerd Font' size='large'></span>"
-			]
-		}
-	},
+  "pulseaudio": {
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-double-click": "pavucontrol",
+    "format": "{icon}  {volume}%",
+    "format-muted": "<span font_family='Symbols Nerd Font' size='large'>󰖁</span> Muted",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "<span font_family='Symbols Nerd Font' size='large'></span>",
+        "<span font_family='Symbols Nerd Font' size='large'></span>",
+        "<span font_family='Symbols Nerd Font' size='large'></span>",
+      ],
+    },
+  },
 }
