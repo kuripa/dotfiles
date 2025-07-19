@@ -199,16 +199,18 @@ client.focused_inactive $color2 $color2 $color1 $color2 $color2
 client.unfocused        $color2 $color2 $color1 $color2 $color2
 client.urgent           $color3 $color3 $color1 $color3 $color3
 
-default_border pixel 1
-default_floating_border pixel 1
-smart_gaps off 
-gaps inner 8px
-gaps outer 8px
+# default_border pixel 1
+# default_floating_border pixel 1
+
+# smart_gaps off 
+# gaps inner 0px
+# gaps outer 0px
 
 font pango:DejaVu Sans Mono 8
-titlebar_border_thickness 0
-titlebar_padding 1
-titlebar_separator enable
+
+#titlebar_border_thickness 0
+#titlebar_padding 1
+#titlebar_separator enable
 
 #----------------------------------------
 # Window Rules
