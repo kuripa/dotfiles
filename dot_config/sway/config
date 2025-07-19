@@ -278,26 +278,6 @@ exec /usr/libexec/xdg-desktop-portal-gtk
 #exec flatpak run com.discordapp.Discord
 #exec flatpak run com.rtosta.zapzap
 
-#----------------------------------------
-# SwayFX specific Settings
-#----------------------------------------
-corner_radius 15
-titlebar_separator disable
-blur disable 
-blur_xray disable
-blur_passes 4 
-blur_radius 6 
-
-shadows disable 
-shadows_on_csd disable 
-shadow_blur_radius 20 
-shadow_color #FF880077
-shadow_offset 0 0 
-
-layer_effects "waybar" blur enable; blur_ignore_transparent enable
-layer_effects "launcher" blur enable; blur_ignore_transparent enable
-layer_effects "logout_dialog" blur enable; blur_ignore_transparent enable
-#layer_effects waybar blur
 
 input type:keyboard {
     xkb_layout us,de
