@@ -1,8 +1,8 @@
 {
   "pulseaudio": {
     "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-    "on-double-click": "pavucontrol",
-    "format": "{icon}  {volume}%",
+    "on-click-right": "pavucontrol",
+    "format": "<span font_family='Symbols Nerd Font' size='large'>{icon}</span> {volume}%",
     "format-muted": "<span font_family='Symbols Nerd Font' size='large'>󰖁</span> Muted",
     "format-icons": {
       "headphone": "",
@@ -12,9 +12,9 @@
       "portable": "",
       "car": "",
       "default": [
-        "<span font_family='Symbols Nerd Font' size='large'></span>",
-        "<span font_family='Symbols Nerd Font' size='large'></span>",
-        "<span font_family='Symbols Nerd Font' size='large'></span>",
+        "",
+        "",
+        "",
       ],
     },
   },

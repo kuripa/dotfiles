@@ -164,8 +164,11 @@ mode "resize" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
+
 bindsym $mod+r mode "resize"
 
+bindsym $mod+t exec swaymsg 'exec kitty --class translator bash -c "~/.local/bin/translator_prompt.sh"'
+#bindsym $mod+t exec ~/.local/bin/translator.sh
 
 # Status Bar:
 # Read `mrn 5 sway-bar` for more information about this section.
@@ -181,8 +184,8 @@ bar {
 #----------------------------------------
 # Brightness Control
 #----------------------------------------
-bindsym XF86MonBrightnessDown exec pkexec brillo -u 150000 -q  -U 2.5
-bindsym XF86MonBrightnessUp exec pkexec brillo -u 150000 -q  -A 2.5
+bindsym XF86MonBrightnessDown exec pkexec brillo -u 150000 -p  -U 10 
+bindsym XF86MonBrightnessUp exec pkexec brillo -u 150000 -p  -A 10 
 
 #----------------------------------------
 # Audio Control
@@ -194,24 +197,21 @@ bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 #----------------------------------------
 # Styling
 #----------------------------------------
-set {
-  $color1 #f0f0f0
-  $color2 #252525
-  $color3 #cc241d
-}
-
-client.focused          $color1 $color1 $color2 $color1 $color1
-client.focused_inactive $color2 $color2 $color1 $color2 $color2
-client.unfocused        $color2 $color2 $color1 $color2 $color2
-client.urgent           $color3 $color3 $color1 $color3 $color3
-
-#default_border pixel 1
-#default_floating_border pixel 1
+include oxocarbon
+# Basic color configuration using the Base16 variables for windows and borders.
+# Property Name         Border  BG      Text    Indicator Child Border
+client.focused          $base02 $base01 $base06 $base0A $base00
+client.focused_inactive $base01 $base01 $base05 $base03 $base01
+client.unfocused        $base01 $base00 $base05 $base01 $base01
+client.urgent           $base08 $base08 $base00 $base08 $base08
+client.placeholder      $base00 $base00 $base05 $base00 $base00
+client.background       $base07
 
 font pango:Terminess Nerd Font 10 
 
+default_border normal 1
 titlebar_border_thickness 1
-titlebar_padding 1
+titlebar_padding 2 
 #titlebar_separator enable
 
 #----------------------------------------
@@ -248,8 +248,11 @@ for_window [app_id="waypaper"] {
   move position center
 }
 
-for_window [app_id="Alacritty"] {
-    blur enable
+
+for_window [app_id="translator"] {
+  floating enable
+  resize set width 800 height 800 
+  move position center
 }
 #----------------------------------------
 # GTK Settings
@@ -272,6 +275,8 @@ exec_always {
 #----------------------------------------
 # Autostarts
 #----------------------------------------
+# set default brightness
+exec pexec brillo -S 20 -q
 #exec pipewire
 exec nm-applet
 exec mako
@@ -288,6 +293,7 @@ set $term2 alacritty
 set $ddterm-id dropdown-terminal
 set $ddterm $term2 --class $ddterm-id
 set $ddterm-resize resize set 100ppt 40ppt, move position 0 0
+
 
 # resize/move new dropdown terminal windows
 for_window [app_id="$ddterm-id"] {

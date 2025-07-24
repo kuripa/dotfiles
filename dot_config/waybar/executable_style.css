@@ -48,7 +48,7 @@ tooltip {
 
 #workspaces button {
     padding: 0px;
-    border-radius: 9px;
+    border-radius: 0px;
     margin-top: 3px;
     margin-bottom: 3px;
     margin-left: 0px;
@@ -60,26 +60,28 @@ tooltip {
 }
 
 #workspaces button.empty {
-    border-radius: 9px;
+    border-radius: 0px;
     background-color: @color3;
 }
 
 #workspaces button.focused {
     color: @color1;
     background-color: @color2;
-    border-radius: 9px;
+    border-radius: 0px;
+    /* padding-left: 12px; */
+    /* padding-right: 12px; */
 }
 
 #workspaces button.active {
     color: @color1;
     background-color: @color2;
-    border-radius: 9px;
+    border-radius: 0px;
 }
 
 #workspaces button.urgent {
     color: @color1;
     background-color: @color3;
-    border-radius: 9px;
+    border-radius: 0px;
 }
 
 #workspaces button:hover {
@@ -89,7 +91,7 @@ tooltip {
     transition: none; /* Disable predefined animations */
     background-color: @text1;
     color: @color1;
-    border-radius: 9px;
+    border-radius: 0px;
 }
 
 #backlight,

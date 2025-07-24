@@ -352,6 +352,12 @@ window-rule {
 }
 
 window-rule {
+    match app-id="org.pulseaudio.pavucontrol"
+    open-floating true
+    default-window-height { proportion 1.0; }
+}
+
+window-rule {
     match app-id="mpv"
   tiled-state true
 }
