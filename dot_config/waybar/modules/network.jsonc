@@ -1,7 +1,7 @@
 {
   "network": {
     "format-wifi": "<span font_family='Symbols Nerd Font' size='large'> </span> {essid}",
-    "format-ethernet": "<span font_family='Symbols Nerd Font' size='large'>󰈀 </span> Connected",
+    "format-ethernet": "<span font_family='Symbols Nerd Font' size='large'>󰈀</span> Connected",
     "format-linked": "{ifname} (No IP)",
     "format-disconnected": "<span font_family='Symbols Nerd Font' size='large'>󰤮</span> Disconnected",
     "tooltip-format-wifi": "Signal Strenght: {signalStrength}% | Down Speed: {bandwidthDownBits}, Up Speed: {bandwidthUpBits}",
