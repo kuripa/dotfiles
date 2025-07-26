@@ -291,6 +291,7 @@ exec waypaper --restore
 exec /usr/libexec/xdg-desktop-portal-gtk
 #exec flatpak run com.discordapp.Discord
 #exec flatpak run com.rtosta.zapzap
+exec blueman-tray
 
 # Dropdown terminal
 set $term2 alacritty
