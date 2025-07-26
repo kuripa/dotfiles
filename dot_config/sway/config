@@ -4,6 +4,12 @@
 #----------------------------------------
 
 #----------------------------------------
+# Includes
+#----------------------------------------
+include workspaces
+include oxocarbon
+
+#----------------------------------------
 # Variables
 #----------------------------------------
 set $mod Mod4
@@ -11,7 +17,7 @@ set $left h
 set $down j
 set $up k
 set $right l 
-set $term kitty 
+set $term foot 
 set $menu fuzzel | xargs swaymsg exec --
 
 #----------------------------------------
@@ -20,7 +26,7 @@ set $menu fuzzel | xargs swaymsg exec --
 #----------------------------------------
 #output * bg ~/art-lake.png fill
 #output eDP-1 resolution 1920x1080 position 0,0
-output DP-2 resolution 2560x1440@164.835Hz position 0,0
+#output DP-2 resolution 2560x1440@164.835Hz position 0,0
 
 #----------------------------------------
 # Idle configuration
@@ -197,7 +203,6 @@ bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 #----------------------------------------
 # Styling
 #----------------------------------------
-include oxocarbon
 # Basic color configuration using the Base16 variables for windows and borders.
 # Property Name         Border  BG      Text    Indicator Child Border
 client.focused          $base02 $base01 $base06 $base0A $base00
