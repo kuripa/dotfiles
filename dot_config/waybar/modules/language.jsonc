@@ -3,11 +3,4 @@
     "format": "<span font_family='Symbols Nerd Font' size='large'> </span>{short}",
     "on-click": "swaymsg input type:keyboard xkb_switch_layout next",
   },
-
-  "hyprland/language": {
-    "format": "<span font_family='Symbols Nerd Font' size='large'> </span>{}",
-    "format-en": "us",
-    "format-de": "de",
-    "on-click": "hyprctl switchxkblayout current next",
-  },
 }
