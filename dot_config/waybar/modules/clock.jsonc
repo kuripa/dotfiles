@@ -1,6 +1,7 @@
 {
   "clock": {
     "format": "<span font_family='Symbols Nerd Font' size='large'></span> {:%H:%M}",
+    "on-click": "xdg-open https://calendar.proton.me/",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "calendar": {
       "mode": "year",
