@@ -1,0 +1,52 @@
+#----------------------------------------
+# Window Rules
+#----------------------------------------
+assign [app_id="firefox"] 2
+assign [app_id="emacs"] 3
+assign [app_id="org.telegram.desktop"] 8
+assign [app_id="com.discordapp.Discord"] 7
+assign [app_id="vesktop"] 7
+assign [app_id="io.missioncenter.MissionCenter"] 10
+assign [class="TeamSpeak"] 7
+
+for_window [app_id="com.rtosta.zapzap"] {
+  move window to workspace 8
+  layout tabbed
+}
+
+for_window [app_id="pavucontrol"] {
+  floating enable
+  resize set width 50ppt height 50ppt
+  move position center
+}
+
+for_window [app_id="thunar"] {
+  floating enable
+  resize set width 75ppt height 75ppt
+  move position center
+}
+
+for_window [app_id="waypaper"] {
+  floating enable
+  resize set width 50ppt height 75ppt
+  move position center
+}
+
+for_window [app_id="translator"] {
+  floating enable
+  resize set width 800 height 400 
+  move position center
+}
+
+# resize/move new dropdown terminal windows
+for_window [app_id="$ddterm-id"] {
+  floating enable
+  $ddterm-resize
+  move to scratchpad
+  scratchpad show
+}
+
+# show existing or start new dropdown terminal
+bindsym $mod+g exec swaymsg '[app_id="$ddterm-id"] scratchpad show' \
+  || $ddterm \
+  && sleep .1 && swaymsg '[app_id="$ddterm-id"] $ddterm-resize'
