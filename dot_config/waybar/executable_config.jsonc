@@ -8,12 +8,11 @@
 
   "modules-left": [
     "network",
-    "hyprland/language",
     "sway/language",
     "load",
     "group/group-utils",
   ],
-  "modules-center": ["hyprland/workspaces", "sway/workspaces"],
+  "modules-center": ["sway/workspaces"],
   "modules-right": [
     "mpris",
     "tray",
