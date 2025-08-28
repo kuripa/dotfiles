@@ -55,11 +55,18 @@ set $ddterm-resize resize set 100ppt 40ppt, move position 0 0
 #----------------------------------------
 # Idle configuration
 #----------------------------------------
+# exec swayidle -w \
+# 	timeout 1800 'swaylock -f -c 000000 -k -l' \
+# 	timeout 3200 'swaymsg "output * dpms off"' \
+# 		resume 'swaymsg "output * dpms on"' \
+# 	before-sleep 'swaylock -f -c 000000 -k -l'
+
 exec swayidle -w \
-	timeout 1800 'swaylock -f -c 000000 -k -l' \
-	timeout 3200 'swaymsg "output * dpms off"' \
-		resume 'swaymsg "output * dpms on"' \
-	before-sleep 'swaylock -f -c 000000 -k -l'
+    timeout 300 'swaylock -f -c 000000 -k -l' \
+    timeout 360 'swaymsg "output * dpms off"' \
+    resume 'swaymsg "output * dpms on"' \
+    timeout 600 'systemctl suspend' \
+    before-sleep 'swaylock -f -c 000000 -k -l'
 
 #----------------------------------------
 # Input configuration
@@ -74,6 +81,12 @@ exec swayidle -w \
 #       middle_emulation enabled
 #   }
 #
+input type:keyboard {
+  xkb_layout us,de
+  xkb_options grp:rctrl_toggle
+  xkb_options ctrl:nocaps
+}
+
 input "5426:166:Razer_Razer_Viper_V2_Pro" {
   dwt enabled
   pointer_accel 0 
@@ -82,13 +95,21 @@ input "5426:166:Razer_Razer_Viper_V2_Pro" {
   accel_profile flat 
 }
 
-input type:keyboard {
-  xkb_layout us,de
-  xkb_options grp:rctrl_toggle
-  xkb_options ctrl:nocaps
+input "1102:4619:DualPoint_Stick" {
+  dwt enabled
+  pointer_accel -0.5 
+  scroll_factor 1 
+  natural_scroll false 
+  accel_profile adaptive 
 }
-
-
+	
+input "1102:4619:DLL07B1:01_044E:120B" {
+  dwt enabled
+  pointer_accel 0 
+  scroll_factor 1 
+  natural_scroll false 
+  accel_profile adaptive 
+}
 # Status Bar:
 # Read `mrn 5 sway-bar` for more information about this section.
 bar {
@@ -101,7 +122,7 @@ bar {
 #----------------------------------------
 # Basic color configuration using the Base16 variables for windows and borders.
 # Property Name         Border  BG      Text    Indicator Child Border
-client.focused          $base02 $base01 $base06 $base0A $base00
+client.focused          $base02 $base09 $base00 $base0A $base00
 client.focused_inactive $base01 $base01 $base05 $base03 $base01
 client.unfocused        $base01 $base00 $base05 $base01 $base01
 client.urgent           $base08 $base08 $base00 $base08 $base08

@@ -8,7 +8,8 @@
 #----------------------------------------
 
 bindsym $mod+Return exec $term
-bindsym $mod+c kill
+bindsym $mod+q kill
+bindsym $mod+e exec $term -e yazi 
 bindsym $mod+d exec $menu
 floating_modifier $mod normal
 bindsym $mod+Shift+c reload
@@ -73,8 +74,8 @@ bindsym $mod+m move workspace to output left
 bindsym $mod+b splith
 bindsym $mod+v splitv
 
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+s layout tabbed
+bindsym $mod+y layout toggle split
 
 bindsym $mod+f fullscreen
 
@@ -120,12 +121,12 @@ bindsym $mod+r mode "resize"
 # Brightness Control
 #----------------------------------------
 
-bindsym XF86MonBrightnessDown exec pkexec brillo -u 150000 -p  -U 10 
-bindsym XF86MonBrightnessUp exec pkexec brillo -u 150000 -p  -A 10 
+# bindsym XF86MonBrightnessDown exec pkexec brillo -u 150000 -p  -U 10 
+# bindsym XF86MonBrightnessUp exec pkexec brillo -u 150000 -p  -A 10 
 
 # brightnessctl
-#bindsym XF86MonBrightnessDown exec brightnessctl -e set 5%-
-#bindsym XF86MonBrightnessUp exec brightnessctl -e set 5%+
+bindsym XF86MonBrightnessDown exec brightnessctl -e set 5%-
+bindsym XF86MonBrightnessUp exec brightnessctl -e set 5%+
 
 #----------------------------------------
 # Audio Control
@@ -142,3 +143,13 @@ bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 bindsym $mod+t exec swaymsg 'exec foot -a translator bash -c "~/.local/bin/translator_prompt.sh"'
 #bindsym $mod+t exec swaymsg 'exec foot --class translator bash -c "~/.local/bin/translator_prompt.sh"'
 #bindsym $mod+t exec ~/.local/bin/translator.sh
+
+bindsym $mod+p mode "logout"
+mode logout {
+    bindsym Escape mode default
+    bindsym r exec systemctl reboot; mode default
+    bindsym p exec systemctl poweroff; mode default
+    bindsym s exec systemctl suspend; mode default
+    bindsym l exec loginctl lock-session; mode default
+    bindsym e exit
+}

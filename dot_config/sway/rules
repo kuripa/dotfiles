@@ -3,8 +3,10 @@
 #----------------------------------------
 assign [app_id="firefox"] 2
 assign [app_id="emacs"] 3
+assign [app_id="mpv"] 5
 assign [app_id="org.telegram.desktop"] 8
 assign [app_id="com.discordapp.Discord"] 7
+assign [app_id="vesktop"] 7
 assign [app_id="vesktop"] 7
 assign [app_id="io.missioncenter.MissionCenter"] 10
 assign [class="TeamSpeak"] 7
