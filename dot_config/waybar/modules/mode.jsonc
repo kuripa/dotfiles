@@ -1,0 +1,6 @@
+{
+	"sway/mode": {
+    "format": "<span font_family='Symbols Nerd Font' size='large'></span> {}",
+    "max-length": 50,
+	}
+}

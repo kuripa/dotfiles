@@ -23,9 +23,10 @@
 * {
     border: none;
     border-radius: 0px;
-    font-family: Terminess Nerd Font;
+    font-family: Terminess Nerd Font Mono;
+    /* font-family: Literation Nerd Font Mono; */
+		font-weight: normal;
     font-size: 12px;
-    min-height: 10px;
 }
 
 window#waybar {
@@ -49,12 +50,8 @@ tooltip {
 #workspaces button {
     padding: 0px;
     border-radius: 0px;
-    margin-top: 3px;
-    margin-bottom: 3px;
-    margin-left: 0px;
     padding-left: 3px;
     padding-right: 3px;
-    margin-right: 0px;
     color: @text1;
     background-color: @color3;
 }
@@ -105,6 +102,7 @@ tooltip {
 #language,
 #load,
 #mpris,
+#mode,
 #network,
 #power-profiles-daemon,
 #pulseaudio,
@@ -113,8 +111,8 @@ tooltip {
     border-radius: 9px 9px 9px 9px;
     opacity: 1;
     color: @text1;
-    margin: 4px 0px 4px 0px;
-    padding: 2px 8px 2px 8px;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 8px 0px 8px;
 }
 
 #backlight:hover,
@@ -184,6 +182,10 @@ tooltip {
 }
 
 #load {
+    margin-left: 10px;
+}
+
+#mode {
     margin-left: 10px;
 }
 

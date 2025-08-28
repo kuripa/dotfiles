@@ -1,7 +1,7 @@
 {
   "layer": "top",
   "position": "top",
-  "height": 35,
+  "height": 2,
   "exclusive": true,
   "passthrough": false,
   "reload_style_on_change": true,
@@ -9,6 +9,7 @@
   "modules-left": [
     "network",
     "sway/language",
+		"sway/mode",
     "load",
     "group/group-utils",
   ],
@@ -30,6 +31,7 @@
     "~/.config/waybar/modules/clock.jsonc",
     "~/.config/waybar/modules/language.jsonc",
     "~/.config/waybar/modules/load.jsonc",
+    "~/.config/waybar/modules/mode.jsonc",
     "~/.config/waybar/modules/mpris.jsonc",
     "~/.config/waybar/modules/network.jsonc",
     "~/.config/waybar/modules/network.jsonc",
