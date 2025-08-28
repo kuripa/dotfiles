@@ -7,17 +7,8 @@ function fish_greeting
   fastfetch
 end 
 
-function y
-	set tmp (mktemp -t "yazi-cwd.XXXXXX")
-	yazi $argv --cwd-file="$tmp"
-	if read -z cwd < "$tmp"; and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
-		builtin cd -- "$cwd"
-	end
-	rm -f -- "$tmp"
-end
-
-if test -f /home/nfuhrman/.env 
-    source /home/nfuhrman/.env
+if test -f /home/nick/.env 
+    source /home/nick/.env
 end
 
 set -x DBUS_SESSION_BUS_ADDRESS unix:path=/run/user/(id -u)/bus
@@ -27,6 +18,7 @@ set -x DBUS_SYSTEM_BUS_ADDRESS unix:path=/var/run/dbus/system_bus_socket
 set -Ux MANPAGER "nvim +Man!"
 set -Ux MANROFFOPT "-c"
 set -Ux MANOPT ""
+
 fish_add_path -m ~/.local/bin
 
 alias weather="wetter"
@@ -43,7 +35,9 @@ alias clear "printf '\033[2J\033[3J\033[1;1H'"
 
 alias prime-run="__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia"
 
+
 set -gx EDITOR nvim 
+set -gx TERMINAL foot 
 
 zoxide init fish | source
 fzf --fish | source
