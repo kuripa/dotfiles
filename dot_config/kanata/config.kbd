@@ -1,0 +1,39 @@
+(defcfg
+  process-unmapped-keys yes
+)
+
+(defsrc
+  caps h j k l u i n
+)
+
+(deflayer default  
+@cap
+_
+_
+_
+_
+_
+_
+_
+)  
+
+(deflayer cap-mod
+_
+left
+down
+up
+right
+home
+end
+bspc
+)
+
+
+(defvar
+      tap-time 200
+      hold-time 250
+)
+
+(defalias
+      cap (tap-hold-press $tap-time $hold-time esc (layer-toggle cap-mod))
+)
