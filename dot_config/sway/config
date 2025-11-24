@@ -44,6 +44,7 @@ exec /usr/libexec/xdg-desktop-portal-gtk
 #exec flatpak run com.discordapp.Discord
 #exec flatpak run com.rtosta.zapzap
 exec blueman-tray
+exec autotiling-rs
 
 # Dropdown terminal
 set $term2 foot 
@@ -60,6 +61,7 @@ set $ddterm-resize resize set 100ppt 40ppt, move position 0 0
 # 	timeout 3200 'swaymsg "output * dpms off"' \
 # 		resume 'swaymsg "output * dpms on"' \
 # 	before-sleep 'swaylock -f -c 000000 -k -l'
+# exec swayidle -w timeout 5 'foot --fullscreen --app-id screensaver -e ~/.local/bin/cmd-screensaver.sh' resume 'pkill -f "foot --app-id screensaver"'
 
 exec swayidle -w \
     timeout 300 'swaylock -f -c 000000 -k -l' \
@@ -83,8 +85,8 @@ exec swayidle -w \
 #
 input type:keyboard {
   xkb_layout us,de
+  #xkb_options	caps:escape,grp:rctrl_toggle
   xkb_options grp:rctrl_toggle
-  xkb_options ctrl:nocaps
 }
 
 input "5426:166:Razer_Razer_Viper_V2_Pro" {

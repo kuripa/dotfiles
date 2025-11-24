@@ -11,7 +11,7 @@ bindsym $mod+Return exec $term
 bindsym $mod+q kill
 bindsym $mod+e exec $term -e yazi 
 bindsym $mod+d exec $menu
-floating_modifier $mod normal
+bindsym $mod+Shift+d exec menu floating_modifier $mod normal
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+q exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 
@@ -140,9 +140,9 @@ bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 # Custom
 #----------------------------------------
 
-bindsym $mod+t exec swaymsg 'exec foot -a translator bash -c "~/.local/bin/translator_prompt.sh"'
-#bindsym $mod+t exec swaymsg 'exec foot --class translator bash -c "~/.local/bin/translator_prompt.sh"'
-#bindsym $mod+t exec ~/.local/bin/translator.sh
+bindsym $mod+t exec swaymsg 'exec foot --app-id translator fish -c "~/.local/bin/translator.sh"'
+bindsym $mod+Shift+t exec swaymsg 'exec foot --app-id "Task Manager" -e btop'
+bindsym $mod+Shift+w exec swaymsg 'exec webapp-launch https://web.whatsapp.com'
 
 bindsym $mod+p mode "logout"
 mode logout {
@@ -153,3 +153,9 @@ mode logout {
     bindsym l exec loginctl lock-session; mode default
     bindsym e exit
 }
+
+bindgesture swipe:3:right workspace next
+bindgesture swipe:3:left workspace prev
+bindgesture swipe:3:down workspace back_and_forth
+bindgesture swipe:3:up kill
+
