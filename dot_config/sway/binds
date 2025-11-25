@@ -66,6 +66,8 @@ bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
 bindsym $mod+slash workspace back_and_forth
+bindsym alt+tab workspace back_and_forth
+bindsym $mod+tab workspace back_and_forth
 bindsym $mod+m move workspace to output left
 
 #----------------------------------------
@@ -158,4 +160,5 @@ bindgesture swipe:3:right workspace next
 bindgesture swipe:3:left workspace prev
 bindgesture swipe:3:down workspace back_and_forth
 bindgesture swipe:3:up kill
+
 
