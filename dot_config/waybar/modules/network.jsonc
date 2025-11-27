@@ -18,7 +18,7 @@
     "format-ethernet": "<span font_family='Symbols Nerd Font' size='large'>󰈀 </span>Connected",
     "format-disconnected": "",
     "tooltip-format": "",
-    "tooltip-format-ethernet": "Ifname:\t{ifname}\nNMask:\t{netmask}\nDown:\t{bandwidthDownBits}\nUp:\t{bandwidthUpBits}",
+    "tooltip-format-ethernet": "ifname:\t{ifname}\nNMask:\t{netmask}\nDown:\t{bandwidthDownBits}\nUp:\t{bandwidthUpBits}",
     "tooltip-format-disconnected": ""
 },
 "network#wlan": {
