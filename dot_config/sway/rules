@@ -40,6 +40,12 @@ for_window [app_id="translator"] {
   move position center
 }
 
+for_window [app_id="bluetui"] {
+  floating enable
+  resize set width 50ppt height 50ppt
+  move position center
+}
+
 # resize/move new dropdown terminal windows
 for_window [app_id="$ddterm-id"] {
   floating enable
