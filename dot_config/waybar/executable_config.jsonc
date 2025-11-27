@@ -1,13 +1,15 @@
 {
   "layer": "top",
   "position": "top",
-  "height": 2,
+  "height": 25,
   "exclusive": true,
   "passthrough": false,
   "reload_style_on_change": true,
 
   "modules-left": [
-    "network",
+    "network#vpn",
+    "network#ethernet",
+    "network#wlan",
     "sway/language",
 		"sway/mode",
     "load",

@@ -1,10 +1,35 @@
 {
-  "network": {
-    "format-wifi": "<span font_family='Symbols Nerd Font' size='large'> </span> {essid}",
-    "format-ethernet": "<span font_family='Symbols Nerd Font' size='large'>󰈀</span> Connected",
-    "format-linked": "{ifname} (No IP)",
-    "format-disconnected": "<span font_family='Symbols Nerd Font' size='large'>󰤮</span> Disconnected",
-    "tooltip-format-wifi": "Signal Strenght: {signalStrength}% | Down Speed: {bandwidthDownBits}, Up Speed: {bandwidthUpBits}",
-    "tooltip-format-ethernet": "Interface Name: {ifname}\nIP: {ipaddr}\nGateway: {gwaddr}",
-  },
+"network#vpn": {
+    "interval": 60,
+    "interface": "proton0",
+    "max-length": 50,
+    "format": "",
+    "format-ethernet": "<span font_family='Symbols Nerd Font' size='large'>󰱔 </span>VPN Connected",
+    "format-disconnected": "",
+    "tooltip-format": "",
+    "tooltip-format-ethernet": "ifname:\t{ifname}\nNMask:\t{netmask}\nDown:\t{bandwidthDownBits}\nUp:\t{bandwidthUpBits}",
+    "tooltip-format-disconnected": ""
+},
+"network#ethernet": {
+    "interval": 60,
+    "interface": "enp*",
+    "max-length": 50,
+    "format": "",
+    "format-ethernet": "<span font_family='Symbols Nerd Font' size='large'>󰈀 </span>Connected",
+    "format-disconnected": "",
+    "tooltip-format": "",
+    "tooltip-format-ethernet": "Ifname:\t{ifname}\nNMask:\t{netmask}\nDown:\t{bandwidthDownBits}\nUp:\t{bandwidthUpBits}",
+    "tooltip-format-disconnected": ""
+},
+"network#wlan": {
+    "interval": 60,
+    "interface": "wlan0",
+    "max-length": 50,
+    "format": "",
+    "format-wifi": "<span font_family='Symbols Nerd Font' size='large'> </span>{essid} ({signalStrength}%)",
+    "format-disconnected": "<span font_family='Symbols Nerd Font' size='large'>󰖪 </span>Disconnected",
+    "tooltip-format": "",
+    "tooltip-format-wifi": "ifname:\t{ifname}\nIPv4:\t{ipaddr}/{cidr}\nNMask:\t{netmask}\nDown:\t{bandwidthDownBits}\nUp:\t{bandwidthUpBits}",
+    "tooltip-format-disconnected": ""
+},
 }
