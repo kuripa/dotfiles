@@ -6,7 +6,7 @@
     },
     "format": "<span font_family='Symbols Nerd Font' size='large'>{icon}</span> {capacity}%",
     "format-charging": "<span font_family='Symbols Nerd Font' size='large'>󰂄</span> {capacity}%",
-    "format-plugged": "<span font_family='Symbols Nerd Font' size='large'>󰂄</span>{capacity}%",
+    "format-plugged": "<span font_family='Symbols Nerd Font' size='large'>󰂄</span> {capacity}%",
     "format-alt": "<span font_family='Symbols Nerd Font' size='large'>{icon}</span> {time}",
     "format-full": "<span font_family='Symbols Nerd Font' size='large'>󱈑</span> {capacity}%",
     "format-icons": ["󱊡", "󱊢", "󱊣"],
