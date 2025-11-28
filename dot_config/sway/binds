@@ -10,6 +10,7 @@
 bindsym $mod+Return exec $term
 bindsym $mod+q kill
 bindsym $mod+e exec $term -e yazi 
+bindsym $mod+b exec $term -a bluetui -e bluetui 
 bindsym $mod+d exec $menu
 bindsym $mod+Shift+d exec menu floating_modifier $mod normal
 bindsym $mod+Shift+c reload
@@ -73,12 +74,15 @@ bindsym $mod+m move workspace to output left
 #----------------------------------------
 # Layout stuff:
 #----------------------------------------
-bindsym $mod+b splith
-bindsym $mod+v splitv
+# bindsym $mod+b splith
+# bindsym $mod+v splitv
 
-bindsym $mod+s layout tabbed
-bindsym $mod+y layout toggle split
+#bindsym $mod+w layout toggle tabbed stacking
+bindsym $mod+w layout toggle tabbed split
+bindsym $mod+v split toggle 
+bindsym $mod+s sticky toggle 
 
+bindsym $mod+i border toggle 
 bindsym $mod+f fullscreen
 
 bindsym $mod+Shift+space floating toggle
@@ -100,10 +104,10 @@ mode "resize" {
     # right will grow the containers width
     # up will shrink the containers height
     # down will grow the containers height
-    bindsym $left resize shrink width 10px
-    bindsym $down resize grow height 10px
-    bindsym $up resize shrink height 10px
-    bindsym $right resize grow width 10px
+    bindsym $left resize shrink width 20px
+    bindsym $down resize grow height 20px
+    bindsym $up resize shrink height 20px
+    bindsym $right resize grow width 20px
 
     # Ditto, with arrow keys
     bindsym Left resize shrink width 10px
@@ -161,4 +165,7 @@ bindgesture swipe:3:left workspace prev
 bindgesture swipe:3:down workspace back_and_forth
 bindgesture swipe:3:up kill
 
-
+bindgesture swipe:4:up move up 50px
+bindgesture swipe:4:down move down 50px
+bindgesture swipe:4:left move left 50px
+bindgesture swipe:4:right move right 50px
