@@ -1,0 +1,50 @@
+#!/bin/bash
+
+main_menu() {
+    choice=$(printf "Webapp\nUpdate\nQuit" | fuzzel --dmenu --prompt "> ")
+
+    case "$choice" in
+        "Webapp")
+            webapp_menu
+            ;;
+        "Update")
+            update_system
+            ;;
+        "Quit"|"")
+            exit 0
+            ;;
+        *)
+            main_menu
+            ;;
+    esac
+}
+
+webapp_menu() {
+    choice=$(printf "Install\nRemove\nBack" | fuzzel --dmenu --prompt "Webapp > ")
+
+    case "$choice" in
+        "Install")
+            exec webapp-install
+            ;;
+        "Remove")
+            exec webapp-remove
+            ;;
+        "Back"|"")
+            main_menu
+            ;;
+        *)
+            webapp_menu
+            ;;
+    esac
+}
+
+update_system() {
+    # Terminal öffnen und Update ausführen
+    # Beispiel für Foot (Wayland-kompatibles Terminal)
+    foot -e bash -c 'sudo pacman -Syu; echo "Update abgeschlossen! Drücke Enter zum Schließen."; read'
+    main_menu
+}
+
+# Start
+main_menu
+

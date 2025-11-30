@@ -1,0 +1,26 @@
+#!/bin/bash
+
+browser=$(xdg-settings get default-web-browser)
+
+# Zulässige Browser prüfen
+case $browser in
+    google-chrome* | brave-browser* | microsoft-edge* | opera* | vivaldi* | helium-browser*)
+        ;;
+    *)
+        browser="chromium.desktop"
+        ;;
+esac
+
+# Pfad zur .desktop-Datei suchen
+desktop_file=$(printf "%s\n" \
+    "$HOME/.local/share/applications/$browser" \
+    "$HOME/.nix-profile/share/applications/$browser" \
+    "/usr/share/applications/$browser" \
+    | while read -r f; do [ -f "$f" ] && echo "$f" && break; done)
+
+# Exec-Zeile extrahieren (nur das Binary, ohne Argumente)
+exec_bin=$(sed -n 's/^Exec=\([^ ]*\).*/\1/p' "$desktop_file" 2>/dev/null | head -1)
+
+# Browser als Web-App starten
+exec "$exec_bin" --app="$1" "${@:2}"
+
