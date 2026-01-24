@@ -14,9 +14,13 @@ output_path = '~/.config/yazi/theme.toml'
 
 [templates.foot]
 input_path = '~/.config/matugen/templates/foot-colors.ini'
-output_path = '~/.config/foot/theme.ini'
+output_path = '~/.config/foot/colors.ini'
 
 [templates.pywalfox]
 input_path = '~/.config/matugen/templates/pywalfox-colors.json'
 output_path = '~/.cache/wal/colors.json'
 post_hook = 'pywalfox update'
+
+[templates.qutebrowser]
+input_path = '~/.config/matugen/templates/qutebrowser-colors.py'
+output_path = '~/.config/qutebrowser/colors.py'
