@@ -5,137 +5,69 @@
 config-notification {
     disable-failed
 }
-// Outputs from existing configuration
-output "eDP-1" {
-    // Uncomment this line to disable this output.
-    // off
-
-    // Resolution and, optionally, refresh rate of the output.
-    // The format is "<width>x<height>" or "<width>x<height>@<refresh rate>".
-    // If the refresh rate is omitted, niri will pick the highest refresh rate
-    // for the resolution.
-    // If the mode is omitted altogether or is invalid, niri will pick one automatically.
-    // Run `niri msg outputs` while inside a niri instance to list all outputs and their modes.
-    mode "1920x1080"
-
-    // You can use integer or fractional scale, for example use 1.5 for 150% scale.
-    scale 1
-
-    // Transform allows to rotate the output counter-clockwise, valid values are:
-    // normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.
-    transform "normal"
-
-    // Position of the output in the global coordinate space.
-    // This affects directional monitor actions like "focus-monitor-left", and cursor movement.
-    // The cursor can only move between directly adjacent outputs.
-    // Output scale and rotation has to be taken into account for positioning:
-    // outputs are sized in logical, or scaled, pixels.
-    // For example, a 3840×2160 output with scale 2.0 will have a logical size of 1920×1080,
-    // so to put another output directly adjacent to it on the right, set its x to 1920.
-    // If the position is unset or results in an overlap, the output is instead placed
-    // automatically.
-    position x=320 y=1440
-}
-
-output "Microstep MAG274QRF-QD CA8A281500220" {
-    // Uncomment this line to disable this output.
-    // off
-
-    // Resolution and, optionally, refresh rate of the output.
-    // The format is "<width>x<height>" or "<width>x<height>@<refresh rate>".
-    // If the refresh rate is omitted, niri will pick the highest refresh rate
-    // for the resolution.
-    // If the mode is omitted altogether or is invalid, niri will pick one automatically.
-    // Run `niri msg outputs` while inside a niri instance to list all outputs and their modes.
-    mode "2560x1440@164.835"
-
-    // You can use integer or fractional scale, for example use 1.5 for 150% scale.
-    scale 1
-
-    // Transform allows to rotate the output counter-clockwise, valid values are:
-    // normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.
-    transform "normal"
-
-    // Position of the output in the global coordinate space.
-    // This affects directional monitor actions like "focus-monitor-left", and cursor movement.
-    // The cursor can only move between directly adjacent outputs.
-    // Output scale and rotation has to be taken into account for positioning:
-    // outputs are sized in logical, or scaled, pixels.
-    // For example, a 3840×2160 output with scale 2.0 will have a logical size of 1920×1080,
-    // so to put another output directly adjacent to it on the right, set its x to 1920.
-    // If the position is unset or results in an overlap, the output is instead placed
-    // automatically.
-    position x=0 y=0
-}
 
 workspace "work" {
-    layout {
-	gaps 8 
-	center-focused-column "always"
-	    default-column-width { proportion 0.5; }
-	preset-column-widths {
-        proportion 0.33333
-        proportion 0.5
-        proportion 1.0
-    	}
-	struts {
-        left 32
-        right 32
-        top 0 
-        bottom 0 
-    }
-        tab-indicator {
-		on
+layout {
+	gaps 2 
+		center-focused-column "on-overflow"
+		always-center-single-column
+		default-column-width { proportion 0.5; }
+		preset-column-widths {
+  		proportion 0.33333
+    	proportion 0.5
+			proportion 1.0
+		}
+		struts {
+    	left 16 
+    	right 16 
+    	top 0 
+    	bottom 0 
+		}	
+	}   
 }
-}   
+workspace "browser" {
+	layout {
+		struts {
+			left 16 
+			right 16 
+			top 0 
+			bottom 0 
+		}
+	}
 }
-workspace "browser"
+
 workspace "chat" {
-	
-    layout {
-	gaps 8 
-	center-focused-column "always"
-	    default-column-width { proportion 0.5; }
-	preset-column-widths {
-        proportion 0.33333
-        proportion 0.5
-        proportion 1.0
-    	}
-	struts {
-        left 32
-        right 32
-        top 0 
-        bottom 0 
+	layout {
+		gaps 8 
+		center-focused-column "always"
+	  default-column-width { proportion 0.5; }
+		preset-column-widths {
+    	proportion 0.33333
+    	proportion 0.5
+    	proportion 1.0
     }
-        tab-indicator {
-		on
+		struts {
+    	left 64 
+      right 64
+      top 0 
+      bottom 0 
+		}
+	}   
 }
-}   
-}
-workspace "aesthetic" {
+
+workspace "gaming" {
     // Layout config overrides just for this named workspace.
     layout {
-        gaps 32
+        gaps 12 
 
         struts {
             left 64
             right 64
             bottom 64
             top 64
-        }
 
-        border {
-            on
-            width 4
-        }
-
-        // ...any other setting.
     }
 }
-gestures {
-    hot-corners {
-        off
-    }
 }
 
 // Input device configuration.
@@ -150,6 +82,7 @@ input {
     touchpad {
     }
     mouse {
+			accel-profile "flat"
     }
     trackpoint {
     }
@@ -294,7 +227,7 @@ window-rule {
     match app-id=r#"^galculator$"#
     match app-id=r#"^blueman-manager$"#
     match app-id=r#"^org\.gnome\.Nautilus$"#
-    match app-id=r#"^steam$"#
+    // match app-id=r#"^steam$"#
     match app-id=r#"^xdg-desktop-portal$"#
     open-floating true
 }
@@ -315,6 +248,15 @@ window-rule {
 	match app-id="brave-browser"
 	open-on-workspace "browser"
 	open-maximized true
+
+}
+window-rule {
+	match app-id="steam"
+	match app-id="cs2"
+	match app-id="com.hypixel.*"
+	match app-id="HytaleClient"
+	open-on-workspace "gaming"
+  open-floating false
 
 }
 window-rule {
@@ -354,3 +296,4 @@ include "dms/colors.kdl"
 include "dms/layout.kdl"
 include "dms/alttab.kdl"
 include "dms/binds.kdl"
+include "dms/outputs.kdl"
